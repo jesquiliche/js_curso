@@ -1,0 +1,202 @@
+---
+sidebar_position: 3
+---
+
+# Operadores
+
+#### Introducción
+Los operadores son símbolos que le indican al intérprete que realice una operación matemática, lógica o de tipo específico y producen un valor como resultado. En JavaScript, los operadores se dividen en varias categorías: operadores aritméticos, de asignación, de comparación, lógicos, de cadena, condicionales y de otros tipos. Este capítulo explorará cada uno de estos operadores y cómo se utilizan.
+
+#### Operadores Aritméticos
+Los operadores aritméticos se utilizan para realizar operaciones matemáticas sobre números.
+
+- **Suma (`+`)**: Suma dos operandos.
+- **Resta (`-`)**: Resta el segundo operando del primero.
+- **Multiplicación (`*`)**: Multiplica dos operandos.
+- **División (`/`)**: Divide el primer operando por el segundo.
+- **Módulo (`%`)**: Devuelve el resto de la división del primer operando por el segundo.
+- **Incremento (`++`)**: Incrementa el operando en uno.
+- **Decremento (`--`)**: Decrementa el operando en uno.
+
+**Ejemplo:**
+
+```javascript
+let a = 10;
+let b = 5;
+
+console.log(a + b); // Salida: 15
+console.log(a - b); // Salida: 5
+console.log(a * b); // Salida: 50
+console.log(a / b); // Salida: 2
+console.log(a % b); // Salida: 0
+
+a++;
+console.log(a); // Salida: 11
+
+b--;
+console.log(b); // Salida: 4
+```
+
+#### Operadores de Asignación
+Los operadores de asignación se utilizan para asignar valores a las variables.
+
+- **Asignación (`=`)**: Asigna el valor del operando derecho al operando izquierdo.
+- **Asignación de suma (`+=`)**: Suma el operando derecho al operando izquierdo y asigna el resultado al operando izquierdo.
+- **Asignación de resta (`-=`)**: Resta el operando derecho del operando izquierdo y asigna el resultado al operando izquierdo.
+- **Asignación de multiplicación (`*=`)**: Multiplica el operando izquierdo por el derecho y asigna el resultado al operando izquierdo.
+- **Asignación de división (`/=`)**: Divide el operando izquierdo por el derecho y asigna el resultado al operando izquierdo.
+- **Asignación de módulo (`%=`)**: Calcula el módulo del operando izquierdo con el derecho y asigna el resultado al operando izquierdo.
+
+**Ejemplo:**
+
+```javascript
+let x = 10;
+
+x += 5; // Equivalente a x = x + 5
+console.log(x); // Salida: 15
+
+x -= 3; // Equivalente a x = x - 3
+console.log(x); // Salida: 12
+
+x *= 2; // Equivalente a x = x * 2
+console.log(x); // Salida: 24
+
+x /= 4; // Equivalente a x = x / 4
+console.log(x); // Salida: 6
+
+x %= 2; // Equivalente a x = x % 2
+console.log(x); // Salida: 0
+```
+
+#### Operadores de Comparación
+Los operadores de comparación se utilizan para comparar dos valores y devuelven un valor booleano (`true` o `false`).
+
+- **Igual (`==`)**: Devuelve `true` si los operandos son iguales (comparación no estricta).
+- **No igual (`!=`)**: Devuelve `true` si los operandos no son iguales (comparación no estricta).
+- **Estricto igual (`===`)**: Devuelve `true` si los operandos son iguales y del mismo tipo (comparación estricta).
+- **Estricto no igual (`!==`)**: Devuelve `true` si los operandos no son iguales o no son del mismo tipo (comparación estricta).
+- **Mayor que (`>`)**: Devuelve `true` si el operando izquierdo es mayor que el derecho.
+- **Mayor o igual que (`>=`)**: Devuelve `true` si el operando izquierdo es mayor o igual que el derecho.
+- **Menor que (`<`)**: Devuelve `true` si el operando izquierdo es menor que el derecho.
+- **Menor o igual que (`<=`)**: Devuelve `true` si el operando izquierdo es menor o igual que el derecho.
+
+**Ejemplo:**
+
+```javascript
+let num1 = 10;
+let num2 = 5;
+
+console.log(num1 == num2); // Salida: false
+console.log(num1 != num2); // Salida: true
+console.log(num1 === 10);  // Salida: true
+console.log(num1 !== "10");// Salida: true
+console.log(num1 > num2);  // Salida: true
+console.log(num1 >= 10);   // Salida: true
+console.log(num1 < 20);    // Salida: true
+console.log(num1 <= 10);   // Salida: true
+```
+
+#### Operadores Lógicos
+Los operadores lógicos se utilizan para realizar operaciones lógicas sobre valores booleanos.
+
+- **AND (`&&`)**: Devuelve `true` si ambos operandos son `true`.
+- **OR (`||`)**: Devuelve `true` si al menos uno de los operandos es `true`.
+- **NOT (`!`)**: Invierte el valor booleano del operando.
+
+**Ejemplo:**
+
+```javascript
+let verdadero = true;
+let falso = false;
+
+console.log(verdadero && falso); // Salida: false
+console.log(verdadero || falso); // Salida: true
+console.log(!verdadero);         // Salida: false
+```
+
+#### Operadores de Cadena
+Los operadores de cadena se utilizan para concatenar cadenas de texto.
+
+- **Concatenación (`+`)**: Combina dos cadenas de texto.
+- **Concatenación y asignación (`+=`)**: Combina una cadena con otra y asigna el resultado.
+
+**Ejemplo:**
+
+```javascript
+let saludo = "Hola";
+let nombre = "Mundo";
+
+let mensaje = saludo + ", " + nombre + "!";
+console.log(mensaje); // Salida: "Hola, Mundo!"
+
+saludo += ", ¿cómo estás?";
+console.log(saludo); // Salida: "Hola, ¿cómo estás?"
+```
+
+#### Operador Condicional (Ternario)
+El operador condicional (`? :`) es una forma abreviada de la estructura `if...else` y se utiliza para evaluar una expresión y devolver un valor dependiendo de si la expresión es `true` o `false`.
+
+**Sintaxis:**
+
+```javascript
+condicion ? expresion1 : expresion2
+```
+
+**Ejemplo:**
+
+```javascript
+let edad = 18;
+let mensaje = (edad >= 18) ? "Eres mayor de edad" : "Eres menor de edad";
+console.log(mensaje); // Salida: "Eres mayor de edad"
+```
+
+#### Otros Operadores
+
+##### Operador de tipo (`typeof`)
+El operador `typeof` devuelve una cadena que indica el tipo del operando.
+
+**Ejemplo:**
+
+```javascript
+console.log(typeof 42);        // Salida: "number"
+console.log(typeof "Hola");    // Salida: "string"
+console.log(typeof true);      // Salida: "boolean"
+console.log(typeof undefined); // Salida: "undefined"
+console.log(typeof null);      // Salida: "object" (esto es un error histórico en JavaScript)
+console.log(typeof {});        // Salida: "object"
+console.log(typeof []);        // Salida: "object"
+console.log(typeof function(){}); // Salida: "function"
+```
+
+##### Operador de eliminación (`delete`)
+El operador `delete` elimina una propiedad de un objeto.
+
+**Ejemplo:**
+
+```javascript
+let objeto = { nombre: "Juan", edad: 30 };
+delete objeto.edad;
+console.log(objeto); // Salida: { nombre: "Juan" }
+```
+
+##### Operador de desestructuración
+La desestructuración permite extraer valores de arrays u objetos y asignarlos a variables.
+
+**Desestructuración de Arrays:**
+
+```javascript
+let [a, b] = [1, 2];
+console.log(a); // Salida: 1
+console.log(b); // Salida: 2
+```
+
+**Desestructuración de Objetos:**
+
+```javascript
+let { nombre, edad } = { nombre: "Juan", edad: 30 };
+console.log(nombre); // Salida: "Juan"
+console.log(edad);   // Salida: 30
+```
+
+#### Conclusión
+Los operadores son esenciales en JavaScript para realizar operaciones matemáticas, lógicas y de manipulación de datos. Entender cómo funcionan y cómo utilizarlos te permitirá escribir código más eficiente y claro. A medida que practiques, te familiarizarás con estos operadores y los utilizarás de manera intuitiva en tus programas.
