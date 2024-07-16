@@ -147,7 +147,7 @@ do {
 
 ## Bucles y Control de Flujo Adicional
 
-#### `break`
+## `break`
 La instrucción `break` se usa para salir de un bucle o una estructura `switch` antes de que terminen normalmente.
 
 **Ejemplo:**
@@ -175,9 +175,9 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-#### Ejemplos Prácticos y Buenas Prácticas
+## Ejemplos Prácticos y Buenas Prácticas
 
-##### Ejemplo Práctico: Iterar sobre Arrays
+### Ejemplo Práctico: Iterar sobre Arrays
 
 ```javascript
 let frutas = ["manzana", "banana", "cereza"];
@@ -192,7 +192,7 @@ for (let fruta of frutas) {
 }
 ```
 
-## Ejemplo Práctico: Usar Condicionales y Bucles Juntos
+### Ejemplo Práctico: Usar Condicionales y Bucles Juntos
 
 ```javascript
 let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

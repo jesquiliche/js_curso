@@ -4,10 +4,10 @@ sidebar_position: 3
 
 # Operadores
 
-#### Introducción
+## Introducción
 Los operadores son símbolos que le indican al intérprete que realice una operación matemática, lógica o de tipo específico y producen un valor como resultado. En JavaScript, los operadores se dividen en varias categorías: operadores aritméticos, de asignación, de comparación, lógicos, de cadena, condicionales y de otros tipos. Este capítulo explorará cada uno de estos operadores y cómo se utilizan.
 
-#### Operadores Aritméticos
+## Operadores Aritméticos
 Los operadores aritméticos se utilizan para realizar operaciones matemáticas sobre números.
 
 - **Suma (`+`)**: Suma dos operandos.
@@ -37,7 +37,7 @@ b--;
 console.log(b); // Salida: 4
 ```
 
-#### Operadores de Asignación
+## Operadores de Asignación
 Los operadores de asignación se utilizan para asignar valores a las variables.
 
 - **Asignación (`=`)**: Asigna el valor del operando derecho al operando izquierdo.
@@ -68,7 +68,7 @@ x %= 2; // Equivalente a x = x % 2
 console.log(x); // Salida: 0
 ```
 
-#### Operadores de Comparación
+## Operadores de Comparación
 Los operadores de comparación se utilizan para comparar dos valores y devuelven un valor booleano (`true` o `false`).
 
 - **Igual (`==`)**: Devuelve `true` si los operandos son iguales (comparación no estricta).
@@ -96,7 +96,7 @@ console.log(num1 < 20);    // Salida: true
 console.log(num1 <= 10);   // Salida: true
 ```
 
-#### Operadores Lógicos
+## Operadores Lógicos
 Los operadores lógicos se utilizan para realizar operaciones lógicas sobre valores booleanos.
 
 - **AND (`&&`)**: Devuelve `true` si ambos operandos son `true`.
@@ -114,7 +114,7 @@ console.log(verdadero || falso); // Salida: true
 console.log(!verdadero);         // Salida: false
 ```
 
-#### Operadores de Cadena
+## Operadores de Cadena
 Los operadores de cadena se utilizan para concatenar cadenas de texto.
 
 - **Concatenación (`+`)**: Combina dos cadenas de texto.
@@ -133,7 +133,7 @@ saludo += ", ¿cómo estás?";
 console.log(saludo); // Salida: "Hola, ¿cómo estás?"
 ```
 
-#### Operador Condicional (Ternario)
+## Operador Condicional (Ternario)
 El operador condicional (`? :`) es una forma abreviada de la estructura `if...else` y se utiliza para evaluar una expresión y devolver un valor dependiendo de si la expresión es `true` o `false`.
 
 **Sintaxis:**
@@ -150,7 +150,7 @@ let mensaje = (edad >= 18) ? "Eres mayor de edad" : "Eres menor de edad";
 console.log(mensaje); // Salida: "Eres mayor de edad"
 ```
 
-#### Otros Operadores
+## Otros Operadores
 
 ##### Operador de tipo (`typeof`)
 El operador `typeof` devuelve una cadena que indica el tipo del operando.
@@ -179,7 +179,7 @@ delete objeto.edad;
 console.log(objeto); // Salida: { nombre: "Juan" }
 ```
 
-##### Operador de desestructuración
+## Operador de desestructuración
 La desestructuración permite extraer valores de arrays u objetos y asignarlos a variables.
 
 **Desestructuración de Arrays:**
@@ -198,5 +198,5 @@ console.log(nombre); // Salida: "Juan"
 console.log(edad);   // Salida: 30
 ```
 
-#### Conclusión
+## Conclusión
 Los operadores son esenciales en JavaScript para realizar operaciones matemáticas, lógicas y de manipulación de datos. Entender cómo funcionan y cómo utilizarlos te permitirá escribir código más eficiente y claro. A medida que practiques, te familiarizarás con estos operadores y los utilizarás de manera intuitiva en tus programas.

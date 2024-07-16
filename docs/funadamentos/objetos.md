@@ -1,17 +1,14 @@
 ---
 sidebar_position: 5
 ---
-
 # Objetos y arrays
 
-¡Por supuesto! Aquí tienes un desarrollo detallado sobre objetos y arrays en JavaScript, cubriendo la creación y manipulación de objetos, así como los arrays y sus métodos más comunes:
-
-#### Introducción
+## Introducción
 Los objetos y arrays son estructuras de datos fundamentales en JavaScript. Los objetos permiten agrupar datos y funcionalidades relacionadas, mientras que los arrays proporcionan una manera de almacenar y manipular listas de elementos. Este capítulo explorará cómo crear y manipular objetos, así como los métodos más comunes para trabajar con arrays.
 
-#### Creación y Manipulación de Objetos
+## Creación y Manipulación de Objetos
 
-##### Creación de Objetos
+## Creación de Objetos
 En JavaScript, un objeto es una colección de propiedades, donde cada propiedad es una asociación entre un nombre (o clave) y un valor.
 
 **Sintaxis:**
@@ -37,7 +34,7 @@ console.log(persona.nombre); // Salida: "Juan"
 console.log(persona["edad"]); // Salida: 30
 ```
 
-##### Acceso y Modificación de Propiedades
+## Acceso y Modificación de Propiedades
 Puedes acceder a las propiedades de un objeto utilizando la notación de punto (`.`) o la notación de corchetes (`[]`). También puedes modificar las propiedades del objeto.
 
 **Ejemplo:**
@@ -61,7 +58,7 @@ coche["color"] = "rojo";
 console.log(coche.color); // Salida: "rojo"
 ```
 
-##### Métodos de Objetos
+### Métodos de Objetos
 Los métodos son funciones que son propiedades de un objeto. Pueden realizar operaciones utilizando los datos del objeto.
 
 **Ejemplo:**
@@ -77,7 +74,7 @@ let persona = {
 persona.saludar(); // Salida: "Hola, Ana!"
 ```
 
-##### Recorrer las Propiedades de un Objeto
+### Recorrer las Propiedades de un Objeto
 Puedes usar un bucle `for...in` para recorrer las propiedades de un objeto.
 
 **Ejemplo:**
@@ -99,9 +96,9 @@ for (let propiedad in persona) {
 // profesion: Desarrollador
 ```
 
-#### Arrays y sus Métodos más Comunes
+## Arrays y sus Métodos más Comunes
 
-##### Creación de Arrays
+### Creación de Arrays
 Un array es una lista de elementos. Puedes crear un array utilizando corchetes (`[]`) y separar los elementos con comas.
 
 **Sintaxis:**
@@ -117,7 +114,7 @@ let frutas = ["manzana", "banana", "cereza"];
 console.log(frutas[0]); // Salida: "manzana"
 ```
 
-##### Métodos Comunes de Arrays
+### Métodos Comunes de Arrays
 
 - **`push`**: Añade uno o más elementos al final del array.
 
@@ -221,5 +218,5 @@ frutas.splice(1, 1, "kiwi");
 console.log(frutas); // Salida: ["limón", "kiwi", "cereza"]
 ```
 
-#### Conclusión
+## Conclusión
 Los objetos y arrays son componentes esenciales en la programación con JavaScript. Los objetos permiten agrupar datos y comportamientos relacionados, mientras que los arrays facilitan el almacenamiento y la manipulación de listas de elementos. Al dominar la creación y manipulación de objetos y arrays, así como los métodos comunes de arrays, puedes escribir código más robusto y eficiente en JavaScript. Con la práctica, estas estructuras de datos se convertirán en herramientas fundamentales en tu desarrollo como programador.

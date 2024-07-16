@@ -64,12 +64,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'assets/images/logo.jpeg',
+      image: 'assets/images/js.jpg',
       navbar: {
         title: 'JavaScript Esencial',
         logo: {
           alt: 'My Site Logo',
-          src: 'assets/images/logo.jpeg',
+          src: 'assets/images/js.jpg',
         },
         items: [
           {

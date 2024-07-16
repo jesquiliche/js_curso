@@ -4,12 +4,12 @@ sidebar_position: 4
 
 # Funciones
 
-#### Introducción
+## Introducción
 Las funciones son bloques de código reutilizables que realizan una tarea específica. En JavaScript, las funciones son ciudadanos de primera clase, lo que significa que pueden ser asignadas a variables, pasadas como argumentos a otras funciones y devueltas desde otras funciones. Este capítulo explorará cómo declarar y usar funciones, trabajar con parámetros y valores de retorno, y entender el scope y el contexto (`this`) en JavaScript.
 
-#### Declaración y Expresión de Funciones
+## Declaración y Expresión de Funciones
 
-##### Declaración de Funciones
+### Declaración de Funciones
 Una declaración de función define una función con el nombre proporcionado y un cuerpo de código que se ejecuta cuando se llama a la función.
 
 **Sintaxis:**
@@ -30,7 +30,7 @@ function saludar(nombre) {
 saludar("Juan"); // Salida: "Hola, Juan!"
 ```
 
-##### Expresión de Funciones
+### Expresión de Funciones
 Una expresión de función define una función dentro de una expresión y puede ser anónima (sin nombre). Las expresiones de funciones no se elevan (hoisted), lo que significa que no se pueden llamar antes de ser definidas.
 
 **Sintaxis:**
@@ -51,7 +51,7 @@ const saludar = function(nombre) {
 saludar("María"); // Salida: "Hola, María!"
 ```
 
-##### Funciones Flecha
+### Funciones Flecha
 Las funciones flecha proporcionan una sintaxis más concisa para escribir funciones. No tienen su propio `this`, `arguments`, `super` o `new.target`.
 
 **Sintaxis:**
@@ -72,9 +72,9 @@ const saludar = (nombre) => {
 saludar("Carlos"); // Salida: "Hola, Carlos!"
 ```
 
-#### Parámetros y Valores de Retorno
+## Parámetros y Valores de Retorno
 
-##### Parámetros
+### Parámetros
 Las funciones pueden aceptar parámetros, que son valores pasados a la función cuando se llama.
 
 **Ejemplo:**
@@ -87,7 +87,7 @@ function sumar(a, b) {
 console.log(sumar(2, 3)); // Salida: 5
 ```
 
-##### Valores por Defecto
+### Valores por Defecto
 Puedes asignar valores por defecto a los parámetros para que se utilicen si no se proporciona ningún valor al llamar a la función.
 
 **Ejemplo:**
@@ -100,7 +100,7 @@ function saludar(nombre = "Desconocido") {
 saludar(); // Salida: "Hola, Desconocido!"
 ```
 
-##### Valores de Retorno
+### Valores de Retorno
 Las funciones pueden devolver valores usando la palabra clave `return`. Si no se especifica un valor de retorno, la función devuelve `undefined` por defecto.
 
 **Ejemplo:**
@@ -114,9 +114,9 @@ let resultado = multiplicar(4, 5);
 console.log(resultado); // Salida: 20
 ```
 
-#### Scope y Contexto (`this`)
+### Scope y Contexto (`this`)
 
-##### Scope
+### Scope
 El scope define el contexto en el cual las variables están disponibles para su uso. JavaScript tiene dos tipos principales de scope: global y local.
 
 - **Scope Global**: Variables declaradas fuera de cualquier función tienen un scope global y están disponibles en cualquier parte del código.
@@ -138,7 +138,7 @@ miFuncion();
 console.log(localVar); // Error: localVar is not defined
 ```
 
-##### Contexto (`this`)
+### Contexto (`this`)
 El contexto, o `this`, se refiere al objeto desde el cual se invocó la función. El valor de `this` depende de cómo se llama a la función.
 
 **En el contexto global:**
@@ -185,5 +185,5 @@ const persona = {
 persona.saludar(); // Salida: "Hola, undefined!"
 ```
 
-#### Conclusión
+## Conclusión
 Las funciones son una parte fundamental de JavaScript, permitiendo encapsular lógica y reutilizar código. Entender cómo declarar y usar funciones, trabajar con parámetros y valores de retorno, y manejar el scope y el contexto (`this`) te permitirá escribir código más modular y eficiente. Con la práctica, te familiarizarás con las distintas formas de definir y utilizar funciones en tus programas JavaScript.
