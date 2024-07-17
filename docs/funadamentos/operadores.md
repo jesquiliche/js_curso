@@ -149,10 +149,7 @@ let edad = 18;
 let mensaje = (edad >= 18) ? "Eres mayor de edad" : "Eres menor de edad";
 console.log(mensaje); // Salida: "Eres mayor de edad"
 ```
-
-## Otros Operadores
-
-##### Operador de tipo (`typeof`)
+## Operador de tipo (`typeof`)
 El operador `typeof` devuelve una cadena que indica el tipo del operando.
 
 **Ejemplo:**
@@ -168,7 +165,7 @@ console.log(typeof []);        // Salida: "object"
 console.log(typeof function(){}); // Salida: "function"
 ```
 
-##### Operador de eliminación (`delete`)
+## Operador de eliminación (`delete`)
 El operador `delete` elimina una propiedad de un objeto.
 
 **Ejemplo:**
@@ -198,28 +195,28 @@ console.log(nombre); // Salida: "Juan"
 console.log(edad);   // Salida: 30
 ```
 
-# Operador de Propagación en JavaScript
+## Operador de Propagación en JavaScript
 
 El operador de propagación (spread operator) en JavaScript, representado por tres puntos (`...`), es una característica poderosa y versátil introducida en ECMAScript 2015 (ES6). Permite expandir elementos de arrays, objetos y otros iterables en lugares donde se esperan múltiples elementos.
 
-## Usos del Operador de Propagación
+### Usos del Operador de Propagación
 
-### 1. Expansión de Arrays
+#### 1. Expansión de Arrays
 
 El operador de propagación puede usarse para expandir un array en elementos individuales.
 
-#### Ejemplo:
+##### Ejemplo:
 
 ```javascript
 const numeros = [1, 2, 3];
 console.log(...numeros); // 1 2 3
 ```
 
-### 2. Copia de Arrays
+#### 2. Copia de Arrays
 
 Puedes crear una copia superficial de un array utilizando el operador de propagación.
 
-#### Ejemplo:
+##### Ejemplo:
 
 ```javascript
 const original = [1, 2, 3];
@@ -227,11 +224,11 @@ const copia = [...original];
 console.log(copia); // [1, 2, 3]
 ```
 
-### 3. Concatenación de Arrays
+#### 3. Concatenación de Arrays
 
 Puedes combinar dos o más arrays en uno solo de manera sencilla.
 
-#### Ejemplo:
+##### Ejemplo:
 
 ```javascript
 const array1 = [1, 2, 3];
@@ -240,11 +237,11 @@ const combinado = [...array1, ...array2];
 console.log(combinado); // [1, 2, 3, 4, 5, 6]
 ```
 
-### 4. Expansión de Objetos
+#### 4. Expansión de Objetos
 
 A partir de ECMAScript 2018 (ES9), el operador de propagación también puede usarse con objetos para copiar propiedades o combinar objetos.
 
-#### Ejemplo:
+##### Ejemplo:
 
 ```javascript
 const objeto1 = { a: 1, b: 2 };
@@ -253,11 +250,11 @@ const combinadoObj = { ...objeto1, ...objeto2 };
 console.log(combinadoObj); // { a: 1, b: 2, c: 3, d: 4 }
 ```
 
-### 5. Parámetros de Función
+#### 5. Parámetros de Función
 
 El operador de propagación puede ser utilizado para pasar elementos de un array como argumentos individuales a una función.
 
-#### Ejemplo:
+##### Ejemplo:
 
 ```javascript
 function suma(x, y, z) {
@@ -268,20 +265,20 @@ const numeros = [1, 2, 3];
 console.log(suma(...numeros)); // 6
 ```
 
-### 6. Conversiones
+#### 6. Conversiones
 
 El operador de propagación también se puede utilizar para convertir ciertos objetos, como NodeLists y otros iterables, en arrays.
 
-#### Ejemplo:
+##### Ejemplo:
 
 ```javascript
 const nodeList = document.querySelectorAll('p');
 const arrayDeNodos = [...nodeList];
 ```
 
-## Ejemplos Adicionales
+### Ejemplos Adicionales
 
-### Copia Superficial de Objetos
+#### Copia Superficial de Objetos
 
 ```javascript
 const objetoOriginal = { nombre: 'Alice', edad: 25 };
@@ -289,7 +286,7 @@ const copiaObjeto = { ...objetoOriginal };
 console.log(copiaObjeto); // { nombre: 'Alice', edad: 25 }
 ```
 
-### Combinación de Objetos con Propiedades Adicionales
+#### Combinación de Objetos con Propiedades Adicionales
 
 ```javascript
 const usuario = { nombre: 'Bob', edad: 30 };
@@ -299,11 +296,11 @@ const usuarioCompleto = { ...usuario, ...direccion };
 console.log(usuarioCompleto); // { nombre: 'Bob', edad: 30, ciudad: 'Madrid', pais: 'España' }
 ```
 
-### Funciones Variádicas
+#### Funciones Variádicas
 
 Funciones que aceptan un número variable de argumentos pueden beneficiarse del operador de propagación para manejar esos argumentos.
 
-#### Ejemplo:
+##### Ejemplo:
 
 ```javascript
 function sumarTodos(...numeros) {
@@ -311,6 +308,108 @@ function sumarTodos(...numeros) {
 }
 
 console.log(sumarTodos(1, 2, 3, 4)); // 10
+```
+## Operador de Incremento y Decremento
+
+Los operadores de incremento (`++`) y decremento (`--`) en JavaScript son operadores unarios que se utilizan para aumentar o disminuir el valor de una variable numérica en una unidad. Estos operadores se pueden utilizar tanto en forma prefija como en forma postfija, y cada una de estas formas tiene un comportamiento diferente en cuanto a cuándo se realiza la operación de incremento o decremento.
+
+### Operador de Incremento (`++`)
+
+#### Forma Postfija (x++)
+
+Cuando se utiliza el operador de incremento en su forma postfija, la variable se incrementa en 1 después de que se haya evaluado la expresión.
+
+##### Ejemplo:
+
+```javascript
+let x = 5;
+console.log(x++); // 5 (la variable se incrementa después de la evaluación)
+console.log(x);   // 6 (el valor de x ahora es 6)
+```
+
+#### Forma Prefija (++x)
+
+Cuando se utiliza el operador de incremento en su forma prefija, la variable se incrementa en 1 antes de que se haya evaluado la expresión.
+
+##### Ejemplo:
+
+```javascript
+let y = 5;
+console.log(++y); // 6 (la variable se incrementa antes de la evaluación)
+console.log(y);   // 6 (el valor de y ahora es 6)
+```
+
+### Operador de Decremento (`--`)
+
+#### Forma Postfija (x--)
+
+Cuando se utiliza el operador de decremento en su forma postfija, la variable se decrementa en 1 después de que se haya evaluado la expresión.
+
+##### Ejemplo:
+
+```javascript
+let a = 5;
+console.log(a--); // 5 (la variable se decrementa después de la evaluación)
+console.log(a);   // 4 (el valor de a ahora es 4)
+```
+
+#### Forma Prefija (--x)
+
+Cuando se utiliza el operador de decremento en su forma prefija, la variable se decrementa en 1 antes de que se haya evaluado la expresión.
+
+##### Ejemplo:
+
+```javascript
+let b = 5;
+console.log(--b); // 4 (la variable se decrementa antes de la evaluación)
+console.log(b);   // 4 (el valor de b ahora es 4)
+```
+
+### Comparación entre Forma Prefija y Postfija
+
+La principal diferencia entre las formas prefija y postfija de los operadores de incremento y decremento es cuándo se realiza la operación en relación con la evaluación de la expresión.
+
+#### Ejemplo Comparativo:
+
+```javascript
+let m = 10;
+let n = 10;
+
+console.log(m++); // 10 (postfija: devuelve el valor antes del incremento)
+console.log(m);   // 11 (m se incrementó después de la evaluación)
+
+console.log(++n); // 11 (prefija: incrementa el valor antes de devolverlo)
+console.log(n);   // 11 (n se incrementó antes de la evaluación)
+```
+
+En el primer caso (`m++`), `m` se incrementa después de que se evalúa la expresión, por lo que la primera `console.log` muestra `10` y la segunda `console.log` muestra `11`. En el segundo caso (`++n`), `n` se incrementa antes de que se evalúa la expresión, por lo que la primera `console.log` muestra `11`.
+
+### Usos Comunes
+
+#### Bucles
+
+Los operadores de incremento y decremento se utilizan frecuentemente en bucles `for` para actualizar el contador del bucle.
+
+##### Ejemplo:
+
+```javascript
+for (let i = 0; i < 5; i++) {
+    console.log(i); // 0, 1, 2, 3, 4
+}
+```
+
+#### Operaciones Simples
+
+Son útiles para incrementar o decrementar contadores o índices de arrays de manera concisa.
+
+##### Ejemplo:
+
+```javascript
+let index = 0;
+let array = [10, 20, 30];
+
+console.log(array[index++]); // 10 (después de esto, index es 1)
+console.log(array[index++]); // 20 (después de esto, index es 2)
 ```
 
 ## Conclusión
