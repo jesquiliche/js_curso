@@ -1,60 +1,60 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'JavaScript Esencial',
-  tagline: ' Una Guía Completa para Principiantes',
-  favicon: 'assets/images/favicon.ico',
+  title: "JavaScript Esencial",
+  tagline: " Una Guía Completa para Principiantes",
+  favicon: "assets/images/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://jesquiliche.github.io',
+  url: "https://jesquiliche.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/js_curso',
+  baseUrl: "/js_curso",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'jesquiliche', // Usually your GitHub org/user name.
-  projectName: 'js_curso', // Usually your repo name.
-  deploymentBranch:'gh-pages',
-  trailingSlash:false,
+  organizationName: "jesquiliche", // Usually your GitHub org/user name.
+  projectName: "js_curso", // Usually your repo name.
+  deploymentBranch: "gh-pages",
+  trailingSlash: false,
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'es',
-    locales: ['es'],
+    defaultLocale: "es",
+    locales: ["es"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -64,70 +64,81 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'assets/images/js.jpg',
+      image: "assets/images/js.jpg",
       navbar: {
-        title: 'JavaScript Esencial',
+        title: "JavaScript Esencial",
         logo: {
-          alt: 'My Site Logo',
-          src: 'assets/images/js.jpg',
+          alt: "My Site Logo",
+          src: "assets/images/js.jpg",
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
+            type: "doc",
+            docId: "intro",
+            position: "left",
+            label: "Tutorial",
           },
           {
-            href: 'https://github.com/jesquiliche/js_curso',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/jesquiliche/js_curso",
+            label: "GitHub",
+            position: "right",
           },
-         
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: "Tutorial",
+                to: "/docs/intro",
               },
             ],
           },
-       
+
           {
-            title: 'More',
+            title: "More",
             items: [
-                           {
-                label: 'GitHub',
-                href: 'https://github.com/jesquiliche/js_curso',
+              {
+                label: "GitHub",
+                href: "https://github.com/jesquiliche/js_curso",
               },
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Jesús Quintana Esquiliche.`,
       },
-      
+
       prism: {
-        theme: require('prism-react-renderer/themes/vsDark'),
+        theme: require("prism-react-renderer/themes/vsDark"),
       },
     }),
-    
 };
 presets: [
   [
-    '@docusaurus/preset-classic',
+    "@docusaurus/preset-classic",
     {
       // ...
       // otras configuraciones
       // ...
-      staticImageImportPath: 'static',
+      staticImageImportPath: "static",
     },
+
+    [
+      "@docusaurus/preset-classic",
+      {
+        docs: {
+          // ...otras configuraciones
+          path: "docs",
+          routeBasePath: "docs",
+          include: ["**/*.md", "**/*.mdx"],
+        },
+        // ...otras configuraciones
+      },
+    ],
   ],
-]
+];
 
 module.exports = config;
