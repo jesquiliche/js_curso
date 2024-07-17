@@ -309,6 +309,111 @@ function sumarTodos(...numeros) {
 
 console.log(sumarTodos(1, 2, 3, 4)); // 10
 ```
+## Operador de Cortocircuito
+
+Los operadores de cortocircuito en JavaScript son una característica fundamental que permite optimizar el flujo de ejecución en expresiones lógicas. En JavaScript, los operadores lógicos `&&` (AND) y `||` (OR) no solo evalúan las condiciones lógicas, sino que también pueden devolver valores específicos y detener la evaluación una vez que se determina el resultado. Este comportamiento se conoce como "cortocircuito".
+
+### Operador AND (`&&`)
+
+El operador lógico AND (`&&`) evalúa dos expresiones y devuelve el valor de la segunda expresión solo si la primera es verdadera. Si la primera expresión es falsa, el operador AND devuelve el valor de la primera expresión y no evalúa la segunda.
+
+#### Ejemplos:
+
+##### Evaluación de Condiciones:
+
+```javascript
+let a = true;
+let b = false;
+
+console.log(a && b); // false
+```
+
+##### Retorno de Valores:
+
+```javascript
+let x = 0;
+let y = 1;
+
+console.log(x && y); // 0
+console.log(y && x); // 0
+```
+
+En el primer caso, `x` es 0 (falso), por lo que `x && y` devuelve 0 sin evaluar `y`. En el segundo caso, `y` es 1 (verdadero), por lo que `y && x` evalúa `x` y devuelve 0.
+
+#### Uso Común:
+
+El operador AND se utiliza a menudo para ejecutar una función solo si una condición es verdadera.
+
+```javascript
+let user = {
+    name: 'Alice',
+    isAdmin: true
+};
+
+user.isAdmin && console.log('El usuario es administrador'); // "El usuario es administrador"
+```
+
+### Operador OR (`||`)
+
+El operador lógico OR (`||`) evalúa dos expresiones y devuelve el valor de la primera expresión que sea verdadera. Si la primera expresión es verdadera, el operador OR devuelve el valor de la primera expresión y no evalúa la segunda. Si la primera expresión es falsa, el operador OR devuelve el valor de la segunda expresión.
+
+#### Ejemplos:
+
+##### Evaluación de Condiciones:
+
+```javascript
+let a = true;
+let b = false;
+
+console.log(a || b); // true
+```
+
+##### Retorno de Valores:
+
+```javascript
+let x = 0;
+let y = 1;
+
+console.log(x || y); // 1
+console.log(y || x); // 1
+```
+
+En el primer caso, `x` es 0 (falso), por lo que `x || y` evalúa `y` y devuelve 1. En el segundo caso, `y` es 1 (verdadero), por lo que `y || x` devuelve 1 sin evaluar `x`.
+
+#### Uso Común:
+
+El operador OR se utiliza a menudo para proporcionar valores predeterminados.
+
+```javascript
+let userName = '';
+let defaultName = 'Invitado';
+
+let displayName = userName || defaultName;
+console.log(displayName); // "Invitado"
+```
+
+En este caso, `userName` es una cadena vacía (falso), por lo que `displayName` toma el valor de `defaultName`.
+
+### Operador de Coalescencia Nula (`??`)
+
+Introducido en ECMAScript 2020 (ES11), el operador de coalescencia nula (`??`) es similar al operador OR (`||`), pero solo considera `null` o `undefined` como valores "falsos". Esto es útil para distinguir entre valores `null`/`undefined` y otros valores falsy como `0` o `''`.
+
+#### Ejemplos:
+
+```javascript
+let userAge = 0;
+let defaultAge = 18;
+
+let age = userAge ?? defaultAge;
+console.log(age); // 0
+```
+
+En este caso, `userAge` es 0, y con el operador `??`, `age` toma el valor de `userAge` en lugar de `defaultAge`.
+
+## Conclusión
+
+Los operadores de cortocircuito (`&&` y `||`) son herramientas poderosas en JavaScript que permiten controlar el flujo de ejecución de las expresiones lógicas de manera eficiente. Además, el operador de coalescencia nula (`??`) proporciona una forma más precisa de manejar valores nulos o indefinidos. Comprender y utilizar estos operadores correctamente puede mejorar significativamente la legibilidad y la eficiencia de tu código.
+
 ## Operador de Incremento y Decremento
 
 Los operadores de incremento (`++`) y decremento (`--`) en JavaScript son operadores unarios que se utilizan para aumentar o disminuir el valor de una variable numérica en una unidad. Estos operadores se pueden utilizar tanto en forma prefija como en forma postfija, y cada una de estas formas tiene un comportamiento diferente en cuanto a cuándo se realiza la operación de incremento o decremento.
