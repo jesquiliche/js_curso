@@ -14,12 +14,12 @@ const config = {
   url: 'https://jesquiliche.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/js_curso_doc',
+  baseUrl: '/js_curso',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'jesquiliche', // Usually your GitHub org/user name.
-  projectName: 'js_curso_doc', // Usually your repo name.
+  projectName: 'js_curso', // Usually your repo name.
   deploymentBranch:'gh-pages',
   trailingSlash:false,
 
@@ -79,7 +79,7 @@ const config = {
             label: 'Tutorial',
           },
           {
-            href: 'https://github.com/jesquiliche/js_curso_doc',
+            href: 'https://github.com/jesquiliche/js_curso',
             label: 'GitHub',
             position: 'right',
           },
@@ -104,7 +104,7 @@ const config = {
             items: [
                            {
                 label: 'GitHub',
-                href: 'https://github.com/jesquiliche/js_curso_doc',
+                href: 'https://github.com/jesquiliche/js_curso',
               },
             ],
           },

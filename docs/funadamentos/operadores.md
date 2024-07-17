@@ -198,5 +198,120 @@ console.log(nombre); // Salida: "Juan"
 console.log(edad);   // Salida: 30
 ```
 
+# Operador de Propagación en JavaScript
+
+El operador de propagación (spread operator) en JavaScript, representado por tres puntos (`...`), es una característica poderosa y versátil introducida en ECMAScript 2015 (ES6). Permite expandir elementos de arrays, objetos y otros iterables en lugares donde se esperan múltiples elementos.
+
+## Usos del Operador de Propagación
+
+### 1. Expansión de Arrays
+
+El operador de propagación puede usarse para expandir un array en elementos individuales.
+
+#### Ejemplo:
+
+```javascript
+const numeros = [1, 2, 3];
+console.log(...numeros); // 1 2 3
+```
+
+### 2. Copia de Arrays
+
+Puedes crear una copia superficial de un array utilizando el operador de propagación.
+
+#### Ejemplo:
+
+```javascript
+const original = [1, 2, 3];
+const copia = [...original];
+console.log(copia); // [1, 2, 3]
+```
+
+### 3. Concatenación de Arrays
+
+Puedes combinar dos o más arrays en uno solo de manera sencilla.
+
+#### Ejemplo:
+
+```javascript
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const combinado = [...array1, ...array2];
+console.log(combinado); // [1, 2, 3, 4, 5, 6]
+```
+
+### 4. Expansión de Objetos
+
+A partir de ECMAScript 2018 (ES9), el operador de propagación también puede usarse con objetos para copiar propiedades o combinar objetos.
+
+#### Ejemplo:
+
+```javascript
+const objeto1 = { a: 1, b: 2 };
+const objeto2 = { c: 3, d: 4 };
+const combinadoObj = { ...objeto1, ...objeto2 };
+console.log(combinadoObj); // { a: 1, b: 2, c: 3, d: 4 }
+```
+
+### 5. Parámetros de Función
+
+El operador de propagación puede ser utilizado para pasar elementos de un array como argumentos individuales a una función.
+
+#### Ejemplo:
+
+```javascript
+function suma(x, y, z) {
+    return x + y + z;
+}
+
+const numeros = [1, 2, 3];
+console.log(suma(...numeros)); // 6
+```
+
+### 6. Conversiones
+
+El operador de propagación también se puede utilizar para convertir ciertos objetos, como NodeLists y otros iterables, en arrays.
+
+#### Ejemplo:
+
+```javascript
+const nodeList = document.querySelectorAll('p');
+const arrayDeNodos = [...nodeList];
+```
+
+## Ejemplos Adicionales
+
+### Copia Superficial de Objetos
+
+```javascript
+const objetoOriginal = { nombre: 'Alice', edad: 25 };
+const copiaObjeto = { ...objetoOriginal };
+console.log(copiaObjeto); // { nombre: 'Alice', edad: 25 }
+```
+
+### Combinación de Objetos con Propiedades Adicionales
+
+```javascript
+const usuario = { nombre: 'Bob', edad: 30 };
+const direccion = { ciudad: 'Madrid', pais: 'España' };
+
+const usuarioCompleto = { ...usuario, ...direccion };
+console.log(usuarioCompleto); // { nombre: 'Bob', edad: 30, ciudad: 'Madrid', pais: 'España' }
+```
+
+### Funciones Variádicas
+
+Funciones que aceptan un número variable de argumentos pueden beneficiarse del operador de propagación para manejar esos argumentos.
+
+#### Ejemplo:
+
+```javascript
+function sumarTodos(...numeros) {
+    return numeros.reduce((acumulador, actual) => acumulador + actual, 0);
+}
+
+console.log(sumarTodos(1, 2, 3, 4)); // 10
+```
+
 ## Conclusión
 Los operadores son esenciales en JavaScript para realizar operaciones matemáticas, lógicas y de manipulación de datos. Entender cómo funcionan y cómo utilizarlos te permitirá escribir código más eficiente y claro. A medida que practiques, te familiarizarás con estos operadores y los utilizarás de manera intuitiva en tus programas.

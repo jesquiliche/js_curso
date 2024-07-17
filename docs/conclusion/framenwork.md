@@ -3,7 +3,7 @@ sidebar_position: 1
 
 ---
 # Recursos Adicionales y Próximos Pasos
-
+do
 En el mundo del desarrollo de software, es crucial mantenerse actualizado y aprovechar los recursos disponibles para seguir aprendiendo y creciendo como profesional. En este capítulo, exploraremos algunos recursos adicionales, cómo involucrarse en la comunidad, cursos recomendados y consejos para continuar avanzando en tu carrera como desarrollador de JavaScript.
 
 ---
