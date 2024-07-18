@@ -37,3 +37,17 @@ Cada sección contiene ejercicios prácticos que te permitirán:
 - **Implementar proyectos completos**: Integrar diversos conceptos aprendidos a lo largo de la guía en proyectos más complejos, reforzando tu capacidad para desarrollar aplicaciones robustas.
 
 Estos ejemplos están diseñados para ser accesibles y comprensibles, independientemente de tu nivel de experiencia. A medida que avances, encontrarás ejercicios que aumentan en complejidad, ayudándote a desarrollar una comprensión profunda y práctica de JavaScript.
+
+Aquí tienes el texto actualizado sin la referencia a la suscripción:
+
+## Para saber más
+
+Visita el [blog del autor](https://blog-astro-nu.vercel.app/), donde encontrarás una gran cantidad de recursos, como guías detalladas, libros escritos por el autor, y artículos técnicos sobre programación, trucos y consejos. Este blog es una excelente fuente para profundizar en tus conocimientos y mantenerte actualizado con las últimas tendencias y avances en el mundo del desarrollo web y la programación.
+
+Algunas secciones destacadas del blog incluyen:
+
+- **Guías y Tutoriales**: Paso a paso para aprender nuevas habilidades y técnicas.
+- **Libros del Autor**: Lecturas esenciales escritas por el autor para desarrolladores de todos los niveles.
+- **Artículos Técnicos**: Análisis y explicaciones sobre programación, incluyendo trucos y consejos para mejorar tu eficiencia y habilidades.
+
+Explora el blog y únete a la comunidad de desarrolladores apasionados por el aprendizaje continuo y la innovación.
