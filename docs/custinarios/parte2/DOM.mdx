@@ -1,210 +1,91 @@
 ---
 sidebar_position: 2
-
 ---
+import Quiz from '@site/src/components/Quiz';
+
 # Manipulación del DOM
 
-import Quiz from '@site/src/components/Quiz';
+Aquí tienes un cuestionario sobre **manipulación del DOM en JavaScript**. Responde las preguntas y verifica tus respuestas.
 
 <Quiz questions={[
   {
-    question: '¿Cuál es la sintaxis correcta para una declaración "if" en JavaScript?',
-    options: [
-      'if (condicion) {}',
-      'if condicion {}',
-      'if: (condicion) {}',
-      'if {condicion}'
-    ],
-    answer: 'if (condicion) {}'
+    question: '¿Qué método se usa para seleccionar un elemento por su ID en el DOM?',
+    options: ['document.getElementById()', 'document.querySelector()', 'document.getElementByClassName()', 'document.getElementByTagName()'],
+    answer: 'document.getElementById()'
   },
   {
-    question: '¿Cómo se escribe una estructura "else if" en JavaScript?',
-    options: [
-      'else if (condicion) {}',
-      'elseif (condicion) {}',
-      'else (condicion) if {}',
-      'if else (condicion) {}'
-    ],
-    answer: 'else if (condicion) {}'
+    question: '¿Cómo seleccionas todos los elementos con una clase específica en el DOM?',
+    options: ['document.querySelectorAll()', 'document.getElementsByClassName()', 'document.querySelector()', 'document.getElementsByTagName()'],
+    answer: 'document.getElementsByClassName()'
   },
   {
-    question: '¿Cuál es la sintaxis correcta para un bucle "for" en JavaScript?',
-    options: [
-      'for i=0; i < 5; i++ {}',
-      'for (i = 0; i < 5; i++) {}',
-      'for (i <= 5; i++) {}',
-      'for (i++; i < 5; i=0) {}'
-    ],
-    answer: 'for (i = 0; i < 5; i++) {}'
+    question: '¿Cuál es la forma correcta de cambiar el contenido de un elemento?',
+    options: ['element.innerHTML = "Nuevo contenido"', 'element.content = "Nuevo contenido"', 'element.textContent = "Nuevo contenido"', 'Ambas A y C'],
+    answer: 'Ambas A y C'
   },
   {
-    question: '¿Cómo se escribe un bucle "while" en JavaScript?',
-    options: [
-      'while (condicion) {}',
-      'while condicion {}',
-      'while: (condicion) {}',
-      'while {condicion}'
-    ],
-    answer: 'while (condicion) {}'
+    question: '¿Qué método se usa para agregar un nuevo hijo a un elemento del DOM?',
+    options: ['element.appendChild()', 'element.addChild()', 'element.createChild()', 'element.insertChild()'],
+    answer: 'element.appendChild()'
   },
   {
-    question: '¿Cómo se garantiza que un bloque de código se ejecuta al menos una vez en JavaScript?',
-    options: [
-      'Usando un bucle "while"',
-      'Usando una declaración "if"',
-      'Usando un bucle "for"',
-      'Usando un bucle "do...while"'
-    ],
-    answer: 'Usando un bucle "do...while"'
+    question: '¿Cómo se elimina un elemento del DOM?',
+    options: ['element.remove()', 'element.delete()', 'element.removeChild()', 'element.deleteChild()'],
+    answer: 'element.remove()'
   },
   {
-    question: '¿Cuál es el propósito de la declaración "break" en un bucle o switch?',
-    options: [
-      'Para terminar el bucle o switch inmediatamente',
-      'Para saltar a la siguiente iteración del bucle',
-      'Para volver al inicio del bucle',
-      'Para pasar al siguiente caso en un switch'
-    ],
-    answer: 'Para terminar el bucle o switch inmediatamente'
+    question: '¿Cómo se añade una clase a un elemento del DOM?',
+    options: ['element.classList.add()', 'element.addClass()', 'element.className.add()', 'element.class.add()'],
+    answer: 'element.classList.add()'
   },
   {
-    question: '¿Cuál es la declaración que se usa para saltar a la siguiente iteración en un bucle?',
+    question: '¿Cuál es la forma correcta de manejar un evento de clic en un botón?',
     options: [
-      'break',
-      'continue',
-      'next',
-      'skip'
+      'button.onclick = function() {}',
+      'button.addEventListener("click", function() {})',
+      'button.on("click", function() {})',
+      'Ambas A y B'
     ],
-    answer: 'continue'
+    answer: 'Ambas A y B'
   },
   {
-    question: '¿Qué palabra clave se usa para ejecutar un bloque de código dependiendo de diferentes casos?',
-    options: [
-      'switch',
-      'if',
-      'else',
-      'for'
-    ],
-    answer: 'switch'
+    question: '¿Cómo se puede prevenir el comportamiento predeterminado de un evento?',
+    options: ['event.preventDefault()', 'event.stopPropagation()', 'event.prevent()', 'event.stopDefault()'],
+    answer: 'event.preventDefault()'
   },
   {
-    question: '¿Qué sucede si no se incluye una declaración "break" en un caso de switch?',
-    options: [
-      'El siguiente caso se ejecuta automáticamente',
-      'Se produce un error',
-      'El switch se detiene',
-      'El primer caso se vuelve a ejecutar'
-    ],
-    answer: 'El siguiente caso se ejecuta automáticamente'
+    question: '¿Qué método se usa para detener la propagación de un evento en el DOM?',
+    options: ['event.stopPropagation()', 'event.preventDefault()', 'event.stop()', 'event.prevent()'],
+    answer: 'event.stopPropagation()'
   },
   {
-    question: '¿Cómo se define una condición que siempre es verdadera?',
-    options: [
-      'true',
-      'false',
-      'null',
-      'undefined'
-    ],
-    answer: 'true'
+    question: '¿Cómo se puede obtener el valor de un atributo de un elemento?',
+    options: ['element.getAttribute()', 'element.attribute()', 'element.attr()', 'element.get()'],
+    answer: 'element.getAttribute()'
   },
   {
-    question: '¿Qué palabra clave se usa para definir una condición que siempre es falsa?',
-    options: [
-      'true',
-      'false',
-      'null',
-      'undefined'
-    ],
-    answer: 'false'
+    question: '¿Qué método se usa para establecer un nuevo atributo en un elemento?',
+    options: ['element.setAttribute()', 'element.attribute()', 'element.attr()', 'element.set()'],
+    answer: 'element.setAttribute()'
   },
   {
-    question: '¿Qué estructura se usa para manejar diferentes caminos de ejecución basados en una expresión?',
-    options: [
-      'switch',
-      'for',
-      'if',
-      'while'
-    ],
-    answer: 'switch'
+    question: '¿Cómo se clona un elemento del DOM?',
+    options: ['element.cloneNode()', 'element.copy()', 'element.duplicate()', 'element.replicate()'],
+    answer: 'element.cloneNode()'
   },
   {
-    question: '¿Cómo se detiene un bucle inmediatamente?',
-    options: [
-      'break',
-      'continue',
-      'return',
-      'exit'
-    ],
-    answer: 'break'
+    question: '¿Qué propiedad se usa para cambiar el estilo de un elemento?',
+    options: ['element.style', 'element.css', 'element.styles', 'element.setStyle'],
+    answer: 'element.style'
   },
   {
-    question: '¿Qué palabra clave se usa para saltar a la siguiente iteración de un bucle sin completar la actual?',
-    options: [
-      'break',
-      'continue',
-      'skip',
-      'next'
-    ],
-    answer: 'continue'
+    question: '¿Cómo se accede al elemento padre de un nodo en el DOM?',
+    options: ['element.parentNode', 'element.parentElement', 'element.parent', 'Ambas A y B'],
+    answer: 'Ambas A y B'
   },
   {
-    question: '¿Qué estructura se usa para ejecutar un bloque de código repetidamente mientras una condición sea verdadera?',
-    options: [
-      'if',
-      'switch',
-      'while',
-      'for'
-    ],
-    answer: 'while'
-  },
-  {
-    question: '¿Qué estructura se usa para ejecutar un bloque de código un número específico de veces?',
-    options: [
-      'for',
-      'while',
-      'if',
-      'switch'
-    ],
-    answer: 'for'
-  },
-  {
-    question: '¿Qué palabra clave se usa para evaluar una condición en una estructura switch?',
-    options: [
-      'case',
-      'default',
-      'else',
-      'if'
-    ],
-    answer: 'case'
-  },
-  {
-    question: '¿Qué palabra clave se usa para definir un bloque de código a ejecutar si ningún caso es verdadero en un switch?',
-    options: [
-      'case',
-      'default',
-      'else',
-      'if'
-    ],
-    answer: 'default'
-  },
-  {
-    question: '¿Qué estructura permite ejecutar diferentes bloques de código basado en varias condiciones?',
-    options: [
-      'if...else if...else',
-      'switch',
-      'while',
-      'for'
-    ],
-    answer: 'if...else if...else'
-  },
-  {
-    question: '¿Cómo se define una condición que siempre es falsa en JavaScript?',
-    options: [
-      'true',
-      'false',
-      'null',
-      'undefined'
-    ],
-    answer: 'false'
+    question: '¿Cómo se verifica si un elemento tiene una clase específica?',
+    options: ['element.classList.contains()', 'element.hasClass()', 'element.class.contains()', 'element.containsClass()'],
+    answer: 'element.classList.contains()'
   }
 ]} />
