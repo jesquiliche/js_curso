@@ -24,9 +24,9 @@ const Quiz = ({ questions }) => {
       const selectedOption = selectedOptions[index];
       if (selectedOption === q.answer) {
         newScore += 1;
-        newFeedback[index] = 'correcto';
+        newFeedback[index] = 'correcta';
       } else {
-        newFeedback[index] = 'incorrecto';
+        newFeedback[index] = 'incorrecta';
       }
     });
 
@@ -37,7 +37,7 @@ const Quiz = ({ questions }) => {
 
   return (
     <div>
-      <h2>Cuestionario</h2>
+      <h2>Test de conocimientos</h2>
       {!answered ? (
         <form onSubmit={handleSubmit}>
           {questions && questions.map((q, index) => (
