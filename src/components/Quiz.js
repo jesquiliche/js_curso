@@ -40,7 +40,7 @@ const Quiz = ({ questions }) => {
       <h2>Cuestionario</h2>
       {!answered ? (
         <form onSubmit={handleSubmit}>
-          {questions.map((q, index) => (
+          {questions && questions.map((q, index) => (
             <div key={index}>
               <h3><b>Pregunta {index + 1}</b></h3>
               <h4 className='option'>{q.question}</h4>

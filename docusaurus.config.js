@@ -7,14 +7,14 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "JavaScript Esencial",
-  tagline: " Una Guía Completa para Principiantes",
+  tagline: "Una Guía Completa para Principiantes",
   favicon: "assets/images/favicon.ico",
 
   // Set the production url of your site here
   url: "https://jesquiliche.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/js_curso",
+  baseUrl: "/js_curso/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -36,22 +36,20 @@ const config = {
 
   presets: [
     [
-      "classic",
+      "@docusaurus/preset-classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/jesquiliche/js_curso/edit/main/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/jesquiliche/js_curso/edit/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -97,7 +95,6 @@ const config = {
               },
             ],
           },
-
           {
             title: "More",
             items: [
@@ -110,35 +107,11 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Jesús Quintana Esquiliche.`,
       },
-
       prism: {
-        theme: require("prism-react-renderer/themes/vsDark"),
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
       },
     }),
 };
-presets: [
-  [
-    "@docusaurus/preset-classic",
-    {
-      // ...
-      // otras configuraciones
-      // ...
-      staticImageImportPath: "static",
-    },
-
-    [
-      "@docusaurus/preset-classic",
-      {
-        docs: {
-          // ...otras configuraciones
-          path: "docs",
-          routeBasePath: "docs",
-          include: ["**/*.md", "**/*.mdx"],
-        },
-        // ...otras configuraciones
-      },
-    ],
-  ],
-];
 
 module.exports = config;
