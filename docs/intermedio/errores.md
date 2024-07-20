@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Capítulo 10: Manejo de Errores y Depuración en JavaScript
+# Manejo de Errores y Depuración en JavaScript
 
 ## Introducción
 El manejo de errores y la depuración son habilidades esenciales para cualquier desarrollador. En este capítulo, aprenderás cómo manejar errores usando `try...catch`, cómo usar herramientas de depuración en el navegador y cómo utilizar mensajes de consola y logging para rastrear y solucionar problemas en tu código.

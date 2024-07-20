@@ -3,7 +3,6 @@ sidebar_position: 1
 
 ---
 # Programación Orientada a Objetos
-# Programación Orientada a Objetos
 
 ## Introducción
 La Programación Orientada a Objetos (POO) es una manera de organizar y estructurar el código para que sea más fácil de entender, mantener y reutilizar. En este capítulo, exploraremos los conceptos básicos de la POO en JavaScript, incluyendo clases y prototipos, herencia y polimorfismo, y métodos estáticos y dinámicos.

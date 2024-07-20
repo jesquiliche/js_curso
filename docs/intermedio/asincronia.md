@@ -2,7 +2,7 @@
 sidebar_position: 4
 
 ---
-# Capítulo 11: Asincronía en JavaScript
+# Asincronía en JavaScript
 
 ## Introducción
 
