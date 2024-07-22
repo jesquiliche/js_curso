@@ -144,7 +144,7 @@ Primero, asegúrate de tener MongoDB instalado y en funcionamiento. Luego, insta
 npm install mongoose
 ```
 
-##### Conexión a MongoDB con Mongoose
+### Conexión a MongoDB con Mongoose
 
 Crea un archivo llamado `database.js` y añade el siguiente código para conectarte a MongoDB:
 
@@ -190,6 +190,64 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
 ```
+:::info Explicación paso a paso
+#### Paso 1: Importar Mongoose
+```javascript
+const mongoose = require('mongoose');
+```
+- **Qué hace:** Este código trae la biblioteca `mongoose` a tu proyecto.
+- **Por qué lo necesitas:** Mongoose es una herramienta que facilita la conexión y manipulación de datos en una base de datos MongoDB desde Node.js.
+
+#### Paso 2: Conectar a la Base de Datos
+```javascript
+mongoose.connect('mongodb://localhost:27017/mydatabase', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+```
+- **Qué hace:** Este código intenta conectarse a una base de datos MongoDB.
+- **Detalles importantes:**
+  - `'mongodb://localhost:27017/mydatabase'`: Aquí especificas dónde está tu base de datos (en tu propia computadora, en el puerto 27017) y cómo se llama (`mydatabase`).
+  - `useNewUrlParser: true`: Usa un método más moderno para conectarse.
+  - `useUnifiedTopology: true`: Utiliza un motor de conexión mejorado.
+
+#### Paso 3: Obtener la Conexión
+```javascript
+const db = mongoose.connection;
+```
+- **Qué hace:** Guarda la conexión a la base de datos en una variable llamada `db`.
+- **Por qué lo necesitas:** Para poder trabajar con la base de datos, necesitas esta conexión.
+
+#### Paso 4: Manejar Errores
+```javascript
+db.on('error', console.error.bind(console, 'connection error:'));
+```
+- **Qué hace:** Configura una alerta para cuando algo salga mal al intentar conectar a la base de datos.
+- **Detalles importantes:**
+  - `db.on('error', ...)`: "Escucha" los errores de la conexión.
+  - `console.error.bind(console, 'connection error:')`: Si hay un error, imprime un mensaje que dice `connection error:` seguido del error específico.
+
+#### Paso 5: Confirmar Conexión Exitosa
+```javascript
+db.once('open', () => {
+  console.log('Connected to MongoDB');
+});
+```
+- **Qué hace:** Configura una notificación para cuando la conexión a la base de datos sea exitosa.
+- **Detalles importantes:**
+  - `db.once('open', ...)`: "Escucha" el evento `open`, que indica que la conexión se estableció correctamente.
+  - `console.log('Connected to MongoDB');`: Imprime un mensaje que dice `Connected to MongoDB`.
+
+#### Resumen en Términos Simples
+
+1. **Importas Mongoose:** Piensa en Mongoose como un ayudante que te facilita trabajar con tu base de datos.
+2. **Te conectas a tu base de datos:** Le dices a Mongoose dónde está tu base de datos y cómo conectarse a ella.
+3. **Guardas la conexión:** Mantienes una referencia a la conexión para poder usarla.
+4. **Preparas una alerta de error:** Configuras una manera de saber si algo va mal al intentar conectarse.
+5. **Confirmas la conexión exitosa:** Configuras un mensaje que te avisa cuando la conexión a la base de datos ha sido exitosa.
+
+Con estas cinco etapas, configuras tu aplicación Node.js para que se comunique con una base de datos MongoDB, y te aseguras de saber si la conexión funciona o si hay algún problema.
+:::
 
 ### Definición de un Modelo con Mongoose
 
