@@ -726,3 +726,125 @@ console.log(mensajeDescuento); // "El descuento de $50 es $5."
 
 La interpolación de cadenas usando plantillas de cadena es una poderosa característica de JavaScript que mejora la legibilidad y la facilidad de manejo de cadenas. Utilizar plantillas de cadena puede hacer que tu código sea más claro y conciso, y te permite incluir variables, expresiones y formateos de manera sencilla y directa.
 
+Entiendo. Los comentarios en el código son esenciales para hacer que el código sea más legible y comprensible, tanto para ti como para otros desarrolladores que puedan trabajar en el mismo proyecto. En JavaScript, puedes introducir comentarios de dos maneras principales:
+
+### 1. Comentarios de Una Línea
+
+Para hacer un comentario de una sola línea en JavaScript, utiliza dos barras inclinadas `//`. Todo el texto después de `//` en esa línea será tratado como un comentario.
+
+**Ejemplo:**
+
+```javascript
+// Esto es un comentario de una sola línea
+let nombre = "Juan"; // Aquí se asigna el valor "Juan" a la variable nombre
+```
+
+### 2. Comentarios de Varias Líneas
+
+Para hacer un comentario que abarca varias líneas, utiliza `/*` al principio y `*/` al final del comentario. Todo el texto entre `/*` y `*/` será tratado como un comentario.
+
+**Ejemplo:**
+
+```javascript
+/*
+  Este es un comentario de varias líneas.
+  Puede abarcar varias líneas y es útil para describir
+  bloques de código o hacer anotaciones extensas.
+*/
+let edad = 25;
+
+/* 
+   El siguiente código calcula el área de un círculo
+   usando la fórmula A = π * r^2.
+*/
+const PI = 3.14159;
+let radio = 10;
+let area = PI * radio * radio;
+console.log(area);
+```
+
+### Ejemplos Prácticos
+
+Aquí tienes algunos ejemplos de cómo y cuándo usar comentarios en JavaScript:
+
+#### Comentarios Explicativos
+
+Comentarios que explican qué hace una parte del código pueden ser útiles:
+
+```javascript
+// Declaramos una variable para almacenar el nombre del usuario
+let usuario = "Ana";
+
+// Función que saluda al usuario
+function saludar(nombre) {
+    return `Hola, ${nombre}!`;
+}
+
+// Llamamos a la función y mostramos el saludo en la consola
+console.log(saludar(usuario));
+```
+
+#### Comentarios Temporales
+
+Puedes usar comentarios para desactivar temporalmente partes del código mientras pruebas o depuras:
+
+```javascript
+// let resultado = calcularSuma(5, 10); // Desactivado temporalmente
+// console.log(resultado);
+```
+
+## Comentarios
+
+Puedes usar comentarios para marcar áreas del código que necesitan ser completadas o corregidas:
+
+```javascript
+// TODO: Implementar la lógica para manejar errores
+function procesarDatos(datos) {
+    // Código para procesar datos
+}
+
+// FIX: Corregir el cálculo en esta función
+function calcularTotal(precio, impuestos) {
+    return precio + impuestos;
+}
+```
+
+### Comentarios en Código de Ejemplo
+
+Aquí tienes un ejemplo completo de cómo puedes usar comentarios en un código JavaScript:
+
+```javascript
+// Declaramos una constante para el valor de PI
+const PI = 3.14159;
+
+/**
+ * Calcula el área de un círculo.
+ * @param {number} radio - El radio del círculo.
+ * @returns {number} - El área del círculo.
+ */
+function calcularAreaCirculo(radio) {
+    // Verificamos que el radio sea un número positivo
+    if (radio <= 0) {
+        throw new Error("El radio debe ser un número positivo.");
+    }
+
+    // Calculamos el área usando la fórmula A = π * r^2
+    let area = PI * radio * radio;
+    
+    // Devolvemos el área calculada
+    return area;
+}
+
+// Llamamos a la función con un radio de 10 y mostramos el resultado
+let radio = 10;
+let area = calcularAreaCirculo(radio);
+console.log(`El área del círculo con radio ${radio} es ${area}.`);
+```
+
+### Conclusión
+
+- **Comentarios de Una Línea:** Utiliza `//` para hacer comentarios breves.
+- **Comentarios de Varias Líneas:** Utiliza `/* ... */` para comentarios más largos y detallados.
+- **Usos Comunes:** Explicar el propósito del código, desactivar temporalmente líneas, marcar tareas pendientes, y documentar funciones y variables.
+
+Los comentarios son una herramienta crucial para mejorar la claridad del código y facilitar su mantenimiento. ¡Usa comentarios de manera efectiva para que tu código sea más fácil de entender!

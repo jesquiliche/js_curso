@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-
 ---
+
 # Manipulación del DOM en JavaScript
 
 ## Introducción
@@ -11,7 +11,8 @@ El Document Object Model (DOM) es una representación en forma de árbol de los 
 
 Para interactuar con los elementos de una página web, primero necesitas seleccionarlos. Hay varias maneras de seleccionar elementos en el DOM usando JavaScript.
 
-### Seleccionar Elementos por ID
+### getElementById
+#### Seleccionar Elementos por ID
 
 Puedes seleccionar un elemento por su ID usando el método `getElementById`.
 
@@ -37,7 +38,8 @@ const elemento = document.getElementById('miElemento');
 console.log(elemento); // Muestra el div con id "miElemento" en la consola
 ```
 
-### Seleccionar Elementos por Clase
+### getElementsByClassName
+#### Seleccionar Elementos por Clase
 
 Puedes seleccionar todos los elementos que comparten una misma clase usando el método `getElementsByClassName`.
 
@@ -53,7 +55,8 @@ const elementos = document.getElementsByClassName('miClase');
 console.log(elementos); // Muestra una colección de los elementos con clase "miClase"
 ```
 
-### Seleccionar Elementos por Etiqueta
+### getElementsByTagName
+#### Seleccionar Elementos por Etiqueta
 
 Puedes seleccionar todos los elementos de un tipo específico de etiqueta usando el método `getElementsByTagName`.
 
@@ -69,7 +72,8 @@ const parrafos = document.getElementsByTagName('p');
 console.log(parrafos); // Muestra una colección de los elementos <p>
 ```
 
-### Selección Avanzada con `querySelector` y `querySelectorAll`
+### querySelector y querySelectorAll
+#### Selección Avanzada con `querySelector` y `querySelectorAll`
 
 Puedes usar `querySelector` y `querySelectorAll` para hacer selecciones más avanzadas usando selectores CSS.
 
@@ -92,7 +96,8 @@ console.log(todosLosElementos); // Muestra una colección de todos los elementos
 
 Una vez que has seleccionado los elementos, puedes modificar su contenido y estilos.
 
-### Modificar el Contenido
+### innerText y textContent
+#### Modificar el Contenido
 
 Puedes cambiar el contenido de texto de un elemento usando `innerText` o `textContent`.
 
@@ -113,7 +118,8 @@ Para cambiar el contenido HTML de un elemento, usa `innerHTML`.
 elemento.innerHTML = '<strong>Contenido HTML</strong>'; // Cambia el contenido HTML del elemento
 ```
 
-### Modificar Estilos
+### style
+#### Modificar Estilos
 
 Puedes cambiar los estilos de un elemento accediendo a su propiedad `style`.
 
@@ -122,7 +128,8 @@ elemento.style.color = 'red'; // Cambia el color del texto del elemento a rojo
 elemento.style.backgroundColor = 'yellow'; // Cambia el color de fondo del elemento a amarillo
 ```
 
-### Agregar y Quitar Clases
+### classList
+#### Agregar y Quitar Clases
 
 Puedes agregar, quitar o verificar clases CSS usando `classList`.
 
@@ -132,11 +139,100 @@ elemento.classList.remove('miClase'); // Quita la clase "miClase" del elemento
 elemento.classList.toggle('otraClase'); // Agrega la clase "otraClase" si no está, o la quita si ya está
 ```
 
+### createElement
+#### Crear Nuevos Elementos
+
+Puedes crear nuevos elementos en el DOM usando el método `createElement`.
+
+**HTML:**
+```html
+<div id="contenedor"></div>
+```
+
+**JavaScript:**
+```javascript
+const nuevoElemento = document.createElement('p');
+nuevoElemento.innerText = 'Este es un nuevo párrafo';
+const contenedor = document.getElementById('contenedor');
+contenedor.appendChild(nuevoElemento); // Añade el nuevo párrafo al contenedor
+```
+
+### createDocumentFragment
+#### Crear Fragmentos de Documento
+
+Un `DocumentFragment` es un contenedor ligero para elementos del DOM que no se renderiza en la página hasta que se agrega a un elemento existente. Es útil para construir y agregar múltiples elementos a la vez sin causar repintado o reflujo excesivo.
+
+**HTML:**
+```html
+<div id="contenedor"></div>
+```
+
+**JavaScript:**
+```javascript
+const fragmento = document.createDocumentFragment();
+
+const parrafo1 = document.createElement('p');
+parrafo1.innerText = 'Párrafo 1';
+
+const parrafo2 = document.createElement('p');
+parrafo2.innerText = 'Párrafo 2';
+
+fragmento.appendChild(parrafo1);
+fragmento.appendChild(parrafo2);
+
+const contenedor = document.getElementById('contenedor');
+contenedor.appendChild(fragmento); // Añade los párrafos al contenedor de una sola vez
+```
+
+### appendChild
+#### Añadir Elementos como Hijos
+
+El método `appendChild` se usa para agregar un nuevo nodo al final de la lista de hijos de un nodo padre.
+
+**HTML:**
+```html
+<div id="contenedor"></div>
+```
+
+**JavaScript:**
+```javascript
+const contenedor = document.getElementById('contenedor');
+
+const nuevoElemento = document.createElement('div');
+nuevoElemento.innerText = 'Este es un nuevo elemento';
+
+contenedor.appendChild(nuevoElemento); // Añade el nuevo elemento como hijo del contenedor
+```
+
+### insertBefore
+#### Insertar un Elemento Antes de Otro Elemento
+
+El método `insertBefore` se usa para insertar un nuevo nodo antes de un nodo existente en el DOM.
+
+**HTML:**
+```html
+<ul id="lista">
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+</ul>
+```
+
+**JavaScript:**
+```javascript
+const lista = document.getElementById('lista');
+const nuevoElemento = document.createElement('li');
+nuevoElemento.innerText = 'Elemento nuevo';
+
+const primerElemento = lista.firstChild; // Selecciona el primer elemento <li>
+lista.insertBefore(nuevoElemento, primerElemento); // Inserta el nuevo elemento antes del primer elemento
+```
+
 ## Eventos y Manejadores de Eventos
 
 Los eventos son acciones que ocurren en la página web, como clics del ratón, teclas presionadas, etc. Puedes responder a estos eventos usando manejadores de eventos.
 
-### Escuchar un Evento
+### addEventListener
+#### Escuchar un Evento
 
 Para escuchar un evento, usa el método `addEventListener`.
 
@@ -204,19 +300,8 @@ boton.addEventListener('click', function(event) {
 });
 ```
 
-### Remover un Manejador de Eventos
+### removeEventListener
+#### Remover un Manejador de Eventos
 
 Puedes remover un manejador de eventos usando `removeEventListener`.
 
-```javascript
-function mostrarAlerta() {
-    alert('Botón clicado!');
-}
-
-boton.addEventListener('click', mostrarAlerta);
-// Remover el manejador de eventos
-boton.removeEventListener('click', mostrarAlerta);
-```
-
-## Conclusión
-La manipulación del DOM es una habilidad esencial para cualquier desarrollador web. Saber cómo seleccionar elementos, modificar su contenido y estilos, y manejar eventos te permite crear páginas web interactivas y dinámicas. Con práctica y experimentación, te familiarizarás con estas técnicas y podrás aplicarlas en tus propios proyectos.

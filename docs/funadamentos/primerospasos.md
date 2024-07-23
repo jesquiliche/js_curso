@@ -32,6 +32,8 @@ Nosotros para nuestras instalaremos **Visual Studio Code**. Para descargar Vs Co
 
 Node.js es un entorno de ejecución para JavaScript fuera del navegador. Aunque no es estrictamente necesario para escribir JavaScript, es útil para ejecutar scripts localmente y para utilizar herramientas de desarrollo como npm (Node Package Manager).
 
+![vsCode](/images/node.png)
+
 - **Descargar Node.js**: Visita [nodejs.org](https://nodejs.org/) y descarga la versión LTS (Long Term Support).
 
 - **Instalación**: Sigue las instrucciones del instalador. Una vez instalado, puedes verificar la instalación abriendo una terminal y ejecutando los comandos:
@@ -49,6 +51,8 @@ Si estás utilizando VS Code, puedes mejorar tu entorno de desarrollo instalando
 - **Live Server**: Para ejecutar un servidor local y ver los cambios en tiempo real.
 
 Para instalar estas extensiones, abre VS Code, ve a la sección de extensiones (ícono de cuadrado en la barra lateral) y busca las extensiones mencionadas para instalarlas.
+
+![vsCode](/images/vscode1.png)
 
 ---
 
