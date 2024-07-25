@@ -49,6 +49,7 @@ Si estás utilizando VS Code, puedes mejorar tu entorno de desarrollo instalando
 - **ESLint**: Para mantener un código limpio y consistente.
 - **Prettier**: Para formatear el código automáticamente.
 - **Live Server**: Para ejecutar un servidor local y ver los cambios en tiempo real.
+- **Code Runner**: Para correr y probar el código.
 
 Para instalar estas extensiones, abre VS Code, ve a la sección de extensiones (ícono de cuadrado en la barra lateral) y busca las extensiones mencionadas para instalarlas.
 
