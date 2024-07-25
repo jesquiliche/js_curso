@@ -1,14 +1,17 @@
 ---
 sidebar_position: 5
 ---
-# Objetos y arrays
+
+# Objetos y Arrays
 
 ## Introducción
+
 Los objetos y arrays son estructuras de datos fundamentales en JavaScript. Los objetos permiten agrupar datos y funcionalidades relacionadas, mientras que los arrays proporcionan una manera de almacenar y manipular listas de elementos. Este capítulo explorará cómo crear y manipular objetos, así como los métodos más comunes para trabajar con arrays.
 
 ## Creación y Manipulación de Objetos
 
-## Creación de Objetos
+### Creación de Objetos
+
 En JavaScript, un objeto es una colección de propiedades, donde cada propiedad es una asociación entre un nombre (o clave) y un valor.
 
 **Sintaxis:**
@@ -34,7 +37,8 @@ console.log(persona.nombre); // Salida: "Juan"
 console.log(persona["edad"]); // Salida: 30
 ```
 
-## Acceso y Modificación de Propiedades
+### Acceso y Modificación de Propiedades
+
 Puedes acceder a las propiedades de un objeto utilizando la notación de punto (`.`) o la notación de corchetes (`[]`). También puedes modificar las propiedades del objeto.
 
 **Ejemplo:**
@@ -59,6 +63,7 @@ console.log(coche.color); // Salida: "rojo"
 ```
 
 ### Métodos de Objetos
+
 Los métodos son funciones que son propiedades de un objeto. Pueden realizar operaciones utilizando los datos del objeto.
 
 **Ejemplo:**
@@ -75,6 +80,7 @@ persona.saludar(); // Salida: "Hola, Ana!"
 ```
 
 ### Recorrer las Propiedades de un Objeto
+
 Puedes usar un bucle `for...in` para recorrer las propiedades de un objeto.
 
 **Ejemplo:**
@@ -99,6 +105,7 @@ for (let propiedad in persona) {
 ## Arrays y sus Métodos más Comunes
 
 ### Creación de Arrays
+
 Un array es una lista de elementos. Puedes crear un array utilizando corchetes (`[]`) y separar los elementos con comas.
 
 **Sintaxis:**
@@ -115,6 +122,8 @@ console.log(frutas[0]); // Salida: "manzana"
 ```
 
 ### Métodos Comunes de Arrays
+
+#### Añadir y Eliminar Elementos
 
 - **`push`**: Añade uno o más elementos al final del array.
 
@@ -145,6 +154,8 @@ console.log(frutas); // Salida: ["banana", "cereza"]
 frutas.unshift("limón");
 console.log(frutas); // Salida: ["limón", "banana", "cereza"]
 ```
+
+#### Otros Métodos Útiles
 
 - **`length`**: Devuelve el número de elementos en el array.
 
@@ -218,5 +229,146 @@ frutas.splice(1, 1, "kiwi");
 console.log(frutas); // Salida: ["limón", "kiwi", "cereza"]
 ```
 
+- **`concat`**: Combina dos o más arrays y devuelve un nuevo array.
+
+```javascript
+let masFrutas = ["pera", "uva"];
+let todasLasFrutas = frutas.concat(masFrutas);
+console.log(todasLasFrutas); // Salida: ["limón", "kiwi", "cereza", "pera", "uva"]
+```
+
+- **`slice`**: Devuelve una copia superficial de una porción de un array dentro de un nuevo array.
+
+```javascript
+let algunasFrutas = frutas.slice(1, 3);
+console.log(algunasFrutas); // Salida: ["kiwi", "cereza"]
+```
+
+### Métodos de Iteración y Transformación de Arrays
+
+#### Método `forEach`
+
+El método `forEach` ejecuta una función proporcionada una vez por cada elemento del array.
+
+**Ejemplo:**
+
+```javascript
+let frutas = ["manzana", "banana", "cereza"];
+
+frutas.forEach(function(fruta) {
+    console.log(fruta);
+});
+
+// Salida:
+// "manzana"
+// "banana"
+// "cereza"
+```
+
+#### Método `map`
+
+El método `map` crea un nuevo array con los resultados de llamar a una función proporcionada en cada elemento del array.
+
+**Ejemplo:**
+
+```javascript
+let frutas = ["manzana", "banana", "cereza"];
+
+let frutasMayusculas = frutas.map(function(fruta) {
+    return fruta.toUpperCase();
+});
+console.log(frutasMayusculas); // Salida: ["MANZANA", "BANANA", "CEREZA"]
+```
+
+#### Método `filter`
+
+El método `filter` crea un nuevo array con todos los elementos que pasan una prueba implementada por una función proporcionada.
+
+**Ejemplo:**
+
+```javascript
+let frutas = ["manzana", "banana", "cereza"];
+
+let frutasConA = frutas.filter(function(fruta) {
+    return fruta.includes("a");
+});
+console.log(frutasConA); // Salida: ["manzana", "banana"]
+```
+
+#### Método `reduce`
+
+El método `reduce` aplica una función a un acumulador y a cada valor del array (de izquierda a derecha) para reducirlo a un solo valor.
+
+**Ejemplo:**
+
+```javascript
+let numeros = [1, 2, 3, 4];
+
+let suma = numeros.reduce(function(acumulador, valorActual) {
+    return acumulador + valorActual;
+}, 0);
+console.log(suma); // Salida: 10
+```
+
+#### Método `find`
+
+El método `find` devuelve el primer elemento del array que
+
+ satisface la función de prueba proporcionada.
+
+**Ejemplo:**
+
+```javascript
+let frutas = ["manzana", "banana", "cereza"];
+
+let frutaEncontrada = frutas.find(function(fruta) {
+    return fruta === "banana";
+});
+console.log(frutaEncontrada); // Salida: "banana"
+```
+
+#### Método `findIndex`
+
+El método `findIndex` devuelve el índice del primer elemento del array que satisface la función de prueba proporcionada. De lo contrario, devuelve -1.
+
+**Ejemplo:**
+
+```javascript
+let frutas = ["manzana", "banana", "cereza"];
+
+let indiceFruta = frutas.findIndex(function(fruta) {
+    return fruta === "cereza";
+});
+console.log(indiceFruta); // Salida: 2
+```
+
+#### Método `concat`
+
+El método `concat` combina dos o más arrays y devuelve un nuevo array.
+
+**Ejemplo:**
+
+```javascript
+let frutas = ["manzana", "banana"];
+let masFrutas = ["cereza", "uva"];
+
+let todasLasFrutas = frutas.concat(masFrutas);
+console.log(todasLasFrutas); // Salida: ["manzana", "banana", "cereza", "uva"]
+```
+
+#### Método `slice`
+
+El método `slice` devuelve una copia superficial de una porción de un array dentro de un nuevo array.
+
+**Ejemplo:**
+
+```javascript
+let frutas = ["manzana", "banana", "cereza"];
+
+let algunasFrutas = frutas.slice(1, 3);
+console.log(algunasFrutas); // Salida: ["banana", "cereza"]
+```
+
 ## Conclusión
+
 Los objetos y arrays son componentes esenciales en la programación con JavaScript. Los objetos permiten agrupar datos y comportamientos relacionados, mientras que los arrays facilitan el almacenamiento y la manipulación de listas de elementos. Al dominar la creación y manipulación de objetos y arrays, así como los métodos comunes de arrays, puedes escribir código más robusto y eficiente en JavaScript. Con la práctica, estas estructuras de datos se convertirán en herramientas fundamentales en tu desarrollo como programador.
