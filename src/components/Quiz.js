@@ -73,7 +73,9 @@ const Quiz = ({ questions }) => {
               <p className='correct'>
                 Esta respuesta es: {feedback[index]}
               </p>
-              {feedback[index] === 'incorrecto' && (
+              {feedback[index]}
+              {feedback[index] === 'incorrecta' && (
+                
                 <p className='incorrect'>La respuesta correcta es: {q.answer}</p>
               )}
             </div>
