@@ -20,7 +20,10 @@ Code Runner es una extensión que facilita la ejecución rápida de scripts en v
 ![vsCode](/images/vscode2.png)
 
 4. **Instalar la extensión** haciendo clic en el botón de instalar.
+4. **Probar el código** Escoja el fichero que desea probar, pulse el botón
+derecho del ratón y escoja la opicón **run code**.
 
+![vsCode](/images/vscode3.png)
 ## Uso de Code Runner
 
 Una vez instalada la extensión, puedes ejecutar código fácilmente. Aquí hay algunos pasos para usar Code Runner:
