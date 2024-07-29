@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-
 ---
+
 # Programación Orientada a Objetos
 
 ## Introducción
@@ -177,7 +177,3 @@ miContador.incrementar(); // Salida: 2
 
 ## Conclusión
 La Programación Orientada a Objetos en JavaScript te permite organizar y estructurar tu código de una manera clara y reutilizable. Las clases y los prototipos facilitan la creación y gestión de objetos, mientras que la herencia y el polimorfismo permiten extender y personalizar el comportamiento de los objetos. Los métodos estáticos y dinámicos ofrecen diferentes formas de trabajar con las clases y sus instancias, proporcionando flexibilidad y modularidad en tu código. Con estos conceptos, podrás escribir programas más eficientes y fáciles de mantener.
-
----
-
-Este capítulo ofrece una introducción accesible a la POO en JavaScript, con explicaciones simples y ejemplos prácticos para facilitar el aprendizaje de estos conceptos esenciales.

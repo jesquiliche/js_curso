@@ -289,3 +289,104 @@ console.log([...difference]); // ['Alice', 'Charlie']
 ## Conclusión
 
 `Map` y `Set` son estructuras de datos poderosas en JavaScript que ofrecen características avanzadas y flexibilidad superior en comparación con los objetos y arrays tradicionales. `Map` es ideal para almacenar pares clave-valor con claves de cualquier tipo y manteniendo el orden
+
+## Object.keys()
+
+La función `Object.keys()` devuelve un array de los nombres de las propiedades de un objeto.
+
+### Sintaxis
+```javascript
+Object.keys(obj)
+```
+
+- `obj`: El objeto del cual se obtendrán las claves.
+
+### Ejemplo
+```javascript
+const persona = {
+  nombre: 'Juan',
+  edad: 30,
+  ciudad: 'Madrid'
+};
+
+const claves = Object.keys(persona);
+console.log(claves); // ["nombre", "edad", "ciudad"]
+```
+
+En este ejemplo, `Object.keys(persona)` devuelve un array con las claves del objeto `persona`.
+
+## Object.values()
+
+La función `Object.values()` devuelve un array de los valores de las propiedades de un objeto.
+
+### Sintaxis
+```javascript
+Object.values(obj)
+```
+
+- `obj`: El objeto del cual se obtendrán los valores.
+
+### Ejemplo
+```javascript
+const persona = {
+  nombre: 'Juan',
+  edad: 30,
+  ciudad: 'Madrid'
+};
+
+const valores = Object.values(persona);
+console.log(valores); // ["Juan", 30, "Madrid"]
+```
+
+En este ejemplo, `Object.values(persona)` devuelve un array con los valores de las propiedades del objeto `persona`.
+
+## Object.entries()
+
+La función `Object.entries()` devuelve un array de pares `[key, value]` de las propiedades de un objeto.
+
+### Sintaxis
+```javascript
+Object.entries(obj)
+```
+
+- `obj`: El objeto del cual se obtendrán las entradas.
+
+### Ejemplo
+```javascript
+const persona = {
+  nombre: 'Juan',
+  edad: 30,
+  ciudad: 'Madrid'
+};
+
+const entradas = Object.entries(persona);
+console.log(entradas); // [["nombre", "Juan"], ["edad", 30], ["ciudad", "Madrid"]]
+```
+
+En este ejemplo, `Object.entries(persona)` devuelve un array de pares `[key, value]` para cada propiedad del objeto `persona`.
+
+## Uso Combinado
+
+Estas funciones se pueden combinar para realizar operaciones más complejas. Por ejemplo, se puede usar `Object.entries()` para recorrer un objeto y realizar alguna operación sobre cada clave y valor.
+
+### Ejemplo de Uso Combinado
+```javascript
+const persona = {
+  nombre: 'Juan',
+  edad: 30,
+  ciudad: 'Madrid'
+};
+
+// Usando Object.entries() para iterar sobre el objeto
+Object.entries(persona).forEach(([clave, valor]) => {
+  console.log(`${clave}: ${valor}`);
+});
+// Salida:
+// nombre: Juan
+// edad: 30
+// ciudad: Madrid
+```
+
+En este ejemplo, usamos `Object.entries()` y `forEach()` para iterar sobre las entradas del objeto `persona` y mostramos cada par clave-valor en la consola.
+
+Estas funciones son extremadamente útiles para trabajar con objetos en JavaScript, permitiendo acceder y manipular sus propiedades de manera eficiente.
