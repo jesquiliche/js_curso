@@ -80,9 +80,9 @@ switch (dia) {
 
 ## Estructuras de Control de Bucle
 
-Las estructuras de bucle permiten repetir un bloque de código varias veces. Las principales estructuras de bucle en JavaScript son `for`, `while` y `do...while`.
+Las estructuras de bucle permiten repetir un bloque de código varias veces. Las principales estructuras de bucle en JavaScript son `for`, `for...in`, `for...of`, `while` y `do...while`.
 
-## `for`
+### `for`
 El bucle `for` se usa para repetir un bloque de código un número específico de veces. Es ideal cuando conoces de antemano cuántas veces necesitas iterar.
 
 **Sintaxis:**
@@ -101,7 +101,75 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-## `while`
+### `for...in`
+El bucle `for...in` se usa para iterar sobre todas las propiedades enumerables de un objeto o los índices de un array. Este bucle no es recomendable para iterar sobre arrays cuando el orden es importante o cuando necesitas solo los valores.
+
+**Sintaxis:**
+
+```javascript
+for (variable in objeto) {
+    // Código a ejecutar en cada iteración
+}
+```
+
+**Ejemplo con Objetos:**
+
+```javascript
+let persona = {
+    nombre: "Juan",
+    edad: 30,
+    ciudad: "Madrid"
+};
+
+for (let propiedad in persona) {
+    console.log(propiedad + ": " + persona[propiedad]);
+}
+// Salida:
+// nombre: Juan
+// edad: 30
+// ciudad: Madrid
+```
+
+**Ejemplo con Arrays:**
+
+```javascript
+let frutas = ["manzana", "banana", "cereza"];
+
+for (let indice in frutas) {
+    console.log(indice + ": " + frutas[indice]);
+}
+// Salida:
+// 0: manzana
+// 1: banana
+// 2: cereza
+```
+
+### `for...of`
+El bucle `for...of` se usa para iterar sobre los valores de un objeto iterable como arrays, cadenas, mapas, conjuntos, etc. Este bucle es preferible sobre `for...in` para arrays.
+
+**Sintaxis:**
+
+```javascript
+for (variable of iterable) {
+    // Código a ejecutar en cada iteración
+}
+```
+
+**Ejemplo:**
+
+```javascript
+let frutas = ["manzana", "banana", "cereza"];
+
+for (let fruta of frutas) {
+    console.log(fruta);
+}
+// Salida:
+// manzana
+// banana
+// cereza
+```
+
+### `while`
 El bucle `while` repite un bloque de código mientras una condición especificada sea verdadera. Es útil cuando no conoces de antemano cuántas veces necesitas iterar.
 
 **Sintaxis:**
@@ -123,7 +191,7 @@ while (i < 5) {
 }
 ```
 
-##### `do...while`
+### `do...while`
 El bucle `do...while` es similar a `while`, pero garantiza que el bloque de código se ejecute al menos una vez, ya que la condición se evalúa después de cada iteración.
 
 **Sintaxis:**
@@ -147,7 +215,7 @@ do {
 
 ## Bucles y Control de Flujo Adicional
 
-## `break`
+### `break`
 La instrucción `break` se usa para salir de un bucle o una estructura `switch` antes de que terminen normalmente.
 
 **Ejemplo:**
