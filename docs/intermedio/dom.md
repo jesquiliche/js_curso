@@ -5,13 +5,57 @@ sidebar_position: 2
 # Manipulación del DOM en JavaScript
 
 ## Introducción
-El Document Object Model (DOM) es una representación en forma de árbol de los elementos de una página web. Manipular el DOM significa cambiar la estructura, contenido y estilo de una página web usando JavaScript. En este capítulo, aprenderás cómo seleccionar elementos, modificar su contenido y estilos, y manejar eventos.
+
+El Document Object Model (DOM) es una representación estructurada de un documento HTML o XML en forma de árbol, donde cada nodo del árbol es un objeto que representa una parte del documento. La manipulación del DOM en JavaScript permite interactuar con esta estructura para cambiar dinámicamente el contenido, estructura y estilo de una página web. En este capítulo, aprenderás cómo seleccionar elementos, modificar su contenido y estilos, y manejar eventos.
+
+## Representación del DOM
+
+Imagina el siguiente documento HTML:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM</title>
+</head>
+<body>
+    <div id="miElemento">Hola, mundo!</div>
+    <div class="miClase">Elemento 1</div>
+    <div class="miClase">Elemento 2</div>
+    <p>Párrafo 1</p>
+    <p>Párrafo 2</p>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+
+La estructura del DOM para este documento se ve así:
+
+```
+html
+├── head
+│   ├── meta
+│   ├── meta
+│   ├── title
+├── body
+    ├── div (id="miElemento")
+    ├── div (class="miClase")
+    ├── div (class="miClase")
+    ├── p
+    ├── p
+    ├── script
+```
+
+Cada etiqueta HTML es un nodo en el árbol del DOM, y cada nodo puede tener nodos hijos, formando una jerarquía.
 
 ## Selección de Elementos
 
 Para interactuar con los elementos de una página web, primero necesitas seleccionarlos. Hay varias maneras de seleccionar elementos en el DOM usando JavaScript.
 
-### getElementById
+### `getElementById`
+
 #### Seleccionar Elementos por ID
 
 Puedes seleccionar un elemento por su ID usando el método `getElementById`.
@@ -38,7 +82,8 @@ const elemento = document.getElementById('miElemento');
 console.log(elemento); // Muestra el div con id "miElemento" en la consola
 ```
 
-### getElementsByClassName
+### `getElementsByClassName`
+
 #### Seleccionar Elementos por Clase
 
 Puedes seleccionar todos los elementos que comparten una misma clase usando el método `getElementsByClassName`.
@@ -55,7 +100,8 @@ const elementos = document.getElementsByClassName('miClase');
 console.log(elementos); // Muestra una colección de los elementos con clase "miClase"
 ```
 
-### getElementsByTagName
+### `getElementsByTagName`
+
 #### Seleccionar Elementos por Etiqueta
 
 Puedes seleccionar todos los elementos de un tipo específico de etiqueta usando el método `getElementsByTagName`.
@@ -72,7 +118,8 @@ const parrafos = document.getElementsByTagName('p');
 console.log(parrafos); // Muestra una colección de los elementos <p>
 ```
 
-### querySelector y querySelectorAll
+### `querySelector` y `querySelectorAll`
+
 #### Selección Avanzada con `querySelector` y `querySelectorAll`
 
 Puedes usar `querySelector` y `querySelectorAll` para hacer selecciones más avanzadas usando selectores CSS.
@@ -96,7 +143,8 @@ console.log(todosLosElementos); // Muestra una colección de todos los elementos
 
 Una vez que has seleccionado los elementos, puedes modificar su contenido y estilos.
 
-### innerText y textContent
+### `innerText` y `textContent`
+
 #### Modificar el Contenido
 
 Puedes cambiar el contenido de texto de un elemento usando `innerText` o `textContent`.
@@ -118,7 +166,8 @@ Para cambiar el contenido HTML de un elemento, usa `innerHTML`.
 elemento.innerHTML = '<strong>Contenido HTML</strong>'; // Cambia el contenido HTML del elemento
 ```
 
-### style
+### `style`
+
 #### Modificar Estilos
 
 Puedes cambiar los estilos de un elemento accediendo a su propiedad `style`.
@@ -128,7 +177,8 @@ elemento.style.color = 'red'; // Cambia el color del texto del elemento a rojo
 elemento.style.backgroundColor = 'yellow'; // Cambia el color de fondo del elemento a amarillo
 ```
 
-### classList
+### `classList`
+
 #### Agregar y Quitar Clases
 
 Puedes agregar, quitar o verificar clases CSS usando `classList`.
@@ -139,7 +189,8 @@ elemento.classList.remove('miClase'); // Quita la clase "miClase" del elemento
 elemento.classList.toggle('otraClase'); // Agrega la clase "otraClase" si no está, o la quita si ya está
 ```
 
-### createElement
+### `createElement`
+
 #### Crear Nuevos Elementos
 
 Puedes crear nuevos elementos en el DOM usando el método `createElement`.
@@ -157,7 +208,8 @@ const contenedor = document.getElementById('contenedor');
 contenedor.appendChild(nuevoElemento); // Añade el nuevo párrafo al contenedor
 ```
 
-### createDocumentFragment
+### `createDocumentFragment`
+
 #### Crear Fragmentos de Documento
 
 Un `DocumentFragment` es un contenedor ligero para elementos del DOM que no se renderiza en la página hasta que se agrega a un elemento existente. Es útil para construir y agregar múltiples elementos a la vez sin causar repintado o reflujo excesivo.
@@ -184,7 +236,8 @@ const contenedor = document.getElementById('contenedor');
 contenedor.appendChild(fragmento); // Añade los párrafos al contenedor de una sola vez
 ```
 
-### appendChild
+### `appendChild`
+
 #### Añadir Elementos como Hijos
 
 El método `appendChild` se usa para agregar un nuevo nodo al final de la lista de hijos de un nodo padre.
@@ -204,7 +257,8 @@ nuevoElemento.innerText = 'Este es un nuevo elemento';
 contenedor.appendChild(nuevoElemento); // Añade el nuevo elemento como hijo del contenedor
 ```
 
-### insertBefore
+### `insertBefore`
+
 #### Insertar un Elemento Antes de Otro Elemento
 
 El método `insertBefore` se usa para insertar un nuevo nodo antes de un nodo existente en el DOM.
@@ -231,7 +285,8 @@ lista.insertBefore(nuevoElemento, primerElemento); // Inserta el nuevo elemento 
 
 Los eventos son acciones que ocurren en la página web, como clics del ratón, teclas presionadas, etc. Puedes responder a estos eventos usando manejadores de eventos.
 
-### addEventListener
+### `addEventListener`
+
 #### Escuchar un Evento
 
 Para escuchar un evento, usa el método `addEventListener`.
@@ -250,6 +305,8 @@ boton.addEventListener('click', function() {
     alert('Botón clicado!');
 });
 ```
+
+
 
 ### Eventos Comunes
 
@@ -300,8 +357,28 @@ boton.addEventListener('click', function(event) {
 });
 ```
 
-### removeEventListener
+### `removeEventListener`
+
 #### Remover un Manejador de Eventos
 
 Puedes remover un manejador de eventos usando `removeEventListener`.
 
+**HTML:**
+```html
+<button id="miBoton">Haz clic aquí</button>
+```
+
+**JavaScript:**
+```javascript
+const boton = document.getElementById('miBoton');
+
+function manejadorDeClic() {
+    alert('Botón clicado!');
+}
+
+// Añade un manejador de eventos para el evento "click"
+boton.addEventListener('click', manejadorDeClic);
+
+// Remueve el manejador de eventos
+boton.removeEventListener('click', manejadorDeClic);
+```

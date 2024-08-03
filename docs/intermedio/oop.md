@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 ---
-
 # Programación Orientada a Objetos
 
 ## Introducción
@@ -252,5 +251,217 @@ const miContador = new Contador();
 miContador.incrementar(); // Salida: 1
 miContador.incrementar(); // Salida: 2
 ```
+## Métodos Estáticos y Dinámicos
 
-**Explicación
+### Métodos Estáticos
+
+Los métodos estáticos son funciones que pertenecen a la clase en sí misma, no a las instancias de la clase. Son útiles para operaciones que no dependen de una instancia específica.
+
+#### Cómo Usar Métodos Estáticos
+
+```javascript
+class Calculadora {
+    static sumar(a, b) {
+        return a + b;
+    }
+}
+
+console.log(Calculadora.sumar(5, 3)); // Salida: 8
+```
+
+**Explicación:**
+- `static sumar(a, b) { ... }`: Define el método `sumar` como un método estático de `Calculadora`.
+
+### Métodos Dinámicos
+
+Los métodos dinámicos pertenecen a las instancias de la clase. Son útiles para operaciones que deben realizarse en objetos específicos.
+
+#### Cómo Usar Métodos Dinámicos
+
+```javascript
+class Contador {
+    constructor() {
+        this.cuenta = 0;
+    }
+
+    incrementar() {
+        this.cuenta++;
+        console.log(this.cuenta);
+    }
+}
+
+const miContador = new Contador();
+miContador.incrementar(); // Salida: 1
+miContador.incrementar(); // Salida: 2
+```
+
+**Explicación:**
+- `incrementar() { ... }`: Define el método `incrementar` como un método dinámico de `Contador`.
+
+## Getters y Setters
+
+Los getters y setters son métodos especiales que permiten acceder y actualizar las propiedades de un objeto de manera controlada.
+
+### Cómo Usar Getters y Setters
+
+```javascript
+class Persona {
+    constructor(nombre, edad) {
+        this._nombre = nombre; // Usamos _nombre para diferenciar la propiedad interna del getter/setter
+        this._edad = edad;
+    }
+
+    // Getter para el nombre
+    get nombre() {
+        return this._nombre;
+    }
+
+    // Setter para el nombre
+    set nombre(nuevoNombre) {
+        if (nuevoNombre) {
+            this._nombre = nuevoNombre;
+        } else {
+            console.error("El nombre no puede ser vacío");
+        }
+    }
+
+    // Getter para la edad
+    get edad() {
+        return this._edad;
+    }
+
+    // Setter para la edad
+    set edad(nuevaEdad) {
+        if (nuevaEdad > 0) {
+            this._edad = nuevaEdad;
+        } else {
+            console.error("La edad debe ser un número positivo");
+        }
+    }
+}
+
+const juan = new Persona("Juan", 30);
+console.log(juan.nombre); // Salida: "Juan"
+juan.nombre = "Pedro";
+console.log(juan.nombre); // Salida: "Pedro"
+
+console.log(juan.edad); // Salida: 30
+juan.edad = 35;
+console.log(juan.edad); // Salida: 35
+
+// Intentando establecer valores inválidos
+juan.nombre = ""; // Salida: "El nombre no puede ser vacío"
+juan.edad = -5; // Salida: "La edad debe ser un número positivo"
+```
+
+**Explicación:**
+- `get nombre() { ... }`: Define un getter para la propiedad `nombre`.
+- `set nombre(nuevoNombre) { ... }`: Define un setter para la propiedad `nombre`, con validación.
+- `_nombre` y `_edad`: Se utiliza el prefijo `_` para distinguir las propiedades internas de los getters y setters.
+
+### Campos Privados
+
+En JavaScript, las variables verdaderamente privadas dentro de una clase se pueden crear usando la sintaxis de campos privados introducida en ECMAScript 2022 (ES2022). Los campos privados se declaran con un prefijo `#`.
+
+#### Cómo Usar Campos Privados
+
+```javascript
+class Vehiculo {
+    // Campos privados
+    #marca;
+    #modelo;
+    #año;
+
+    constructor(marca, modelo, año) {
+        this.#marca = marca;
+        this.#modelo = modelo;
+        this.#año = año;
+    }
+
+    // Getter para la marca
+    get marca() {
+        return this.#marca;
+    }
+
+    // Setter para la marca
+    set marca(nuevaMarca) {
+        if (nuevaMarca) {
+            this.#marca = nuevaMarca;
+        } else {
+            console.error("La marca no puede ser vacía");
+        }
+    }
+
+    // Getter para el modelo
+    get modelo() {
+        return this.#modelo;
+    }
+
+    // Setter para el modelo
+    set modelo(nuevoModelo) {
+        if (nuevoModelo) {
+            this.#modelo = nuevoModelo;
+        } else {
+            console.error("El modelo no puede ser vacío");
+        }
+    }
+
+    // Getter para el año
+    get año() {
+        return this.#año;
+    }
+
+    // Setter para el año
+    set año(nuevoAño) {
+        if (nuevoAño > 1885) { // El primer automóvil fue creado alrededor de 1886
+            this.#año = nuevoAño;
+        } else {
+            console.error("El año no es válido");
+        }
+    }
+
+    mostrarInformacion() {
+        console.log(`Vehículo: ${this.marca} ${this.modelo}, Año: ${this.año}`);
+    }
+}
+
+// Ejemplo de uso
+const miVehiculo = new Vehiculo("Toyota", "Corolla", 2020);
+miVehiculo.mostrarInformacion(); // Salida: Vehículo: Toyota Corolla, Año: 2020
+
+// Usando los setters para cambiar las propiedades
+miVehiculo.marca = "Honda";
+miVehiculo.modelo = "Civic";
+miVehiculo.año = 2018;
+
+miVehiculo.mostrarInformacion(); // Salida: Vehículo: Honda Civic, Año: 2018
+
+// Intentando establecer valores inválidos
+miVehiculo.marca = ""; // Salida: La marca no puede ser vacía
+miVehiculo.modelo = ""; // Salida: El modelo no puede ser vacío
+miVehiculo.año = 1800; // Salida: El año no es válido
+```
+
+**Explicación:**
+- **Campos privados:** Utilizamos `#` para declarar las propiedades `#marca`, `#modelo` y `#año` como privadas. Estas propiedades no pueden ser accedidas ni modificadas fuera de la clase.
+  ```javascript
+  #marca;
+  #modelo;
+  #año;
+  ```
+- **Acceso controlado:** Los getters y setters permiten el acceso controlado a estas propiedades privadas, proporcionando una interfaz pública para interactuar con ellas mientras mantienen la encapsulación.
+  ```javascript
+  get marca() {
+      return this.#marca;
+  }
+
+  set marca(nuevaMarca) {
+      if (nuevaMarca) {
+          this.#marca = nuevaMarca;
+      } else {
+          console.error("La marca no puede ser vacía");
+      }
+  }
+  ```
+
+Los campos privados garantizan que los datos encapsulados no se puedan modificar directamente desde fuera de la clase, proporcionando una mayor seguridad y encapsulación en el diseño de la clase.
