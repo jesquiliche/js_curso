@@ -1,20 +1,22 @@
 ---
 sidebar_position: 5
-
 ---
+
 # Asincronía en JavaScript
 
 ## Introducción
 
-La asincronía es una característica fundamental en JavaScript que permite realizar operaciones sin bloquear el hilo principal de ejecución. Esto es crucial para aplicaciones web que necesitan ser rápidas y responsivas. En este capítulo, exploraremos tres formas principales de manejar la asincronía en JavaScript: callbacks, promesas y `async/await`.
+En JavaScript, la asincronía te permite hacer varias cosas al mismo tiempo sin que tu aplicación se congele. Esto es especialmente útil cuando quieres realizar tareas que toman tiempo, como solicitar datos de un servidor, sin detener el resto de la aplicación. En este capítulo, exploraremos tres formas de manejar la asincronía: callbacks, promesas y `async/await`. También haremos una práctica con una llamada a una API de Pokémon para mostrar cómo obtener datos de manera asíncrona.
 
 ## Callbacks
 
 ### ¿Qué es un Callback?
 
-Un callback es una función que se pasa como argumento a otra función y se ejecuta después de que la primera función haya completado su tarea. Los callbacks son una de las formas más antiguas y básicas de manejar la asincronía en JavaScript.
+Un callback es una función que se pasa a otra función para que se ejecute cuando la primera función termine su trabajo. Es como pedirle a alguien que te avise cuando haya terminado de hacer una tarea.
 
 ### Ejemplo Básico de Callback
+
+Imagina que quieres hacer algo en una página web cuando el usuario hace clic en un botón. Puedes usar un callback para ejecutar el código después de que se haya hecho clic en el botón.
 
 **HTML:**
 ```html
@@ -26,7 +28,7 @@ Un callback es una función que se pasa como argumento a otra función y se ejec
     <title>Callbacks en JavaScript</title>
 </head>
 <body>
-    <button id="miBoton">Hacer algo</button>
+    <button id="miBoton">Haz algo</button>
     <script src="app.js"></script>
 </body>
 </html>
@@ -38,7 +40,7 @@ const boton = document.getElementById('miBoton');
 
 function hacerAlgoDespues(callback) {
     console.log('Haciendo algo...');
-    setTimeout(callback, 2000); // Simula una tarea asincrónica con un retraso de 2 segundos
+    setTimeout(callback, 2000); // Espera 2 segundos antes de ejecutar el callback
 }
 
 boton.addEventListener('click', function() {
@@ -48,9 +50,13 @@ boton.addEventListener('click', function() {
 });
 ```
 
+En este código:
+- Cuando haces clic en el botón, se llama a la función `hacerAlgoDespues`.
+- `hacerAlgoDespues` hace algo (en este caso, solo espera 2 segundos) y luego ejecuta el callback.
+
 ### Callbacks Anidados y el "Callback Hell"
 
-Los callbacks pueden volverse difíciles de manejar cuando se anidan varios uno dentro de otro, lo que se conoce como "callback hell".
+Cuando usas callbacks dentro de otros callbacks, el código puede volverse difícil de leer. Esto se llama "callback hell".
 
 **Ejemplo de Callback Hell:**
 ```javascript
@@ -65,11 +71,18 @@ hacerAlgoDespues(function() {
 });
 ```
 
+Aquí, cada tarea debe esperar a que la anterior termine, lo que puede hacer que el código se vea desordenado y sea difícil de seguir.
+
 ## Promesas
 
 ### ¿Qué es una Promesa?
 
-Una promesa es un objeto que representa un valor que puede estar disponible ahora, en el futuro o nunca. Las promesas proporcionan una forma más limpia y manejable de trabajar con asincronía comparado con los callbacks anidados.
+Una promesa es como una promesa en la vida real: te dice que algo sucederá en el futuro. Las promesas tienen tres estados:
+- **Pendiente**: La promesa todavía está esperando a resolverse.
+- **Cumplida (Resolved)**: La promesa se ha completado con éxito.
+- **Rechazada (Rejected)**: La promesa ha fallado.
+
+Las promesas hacen que el código asincrónico sea más fácil de manejar que los callbacks.
 
 ### Creación y Uso de Promesas
 
@@ -77,11 +90,11 @@ Una promesa es un objeto que representa un valor que puede estar disponible ahor
 ```javascript
 const miPromesa = new Promise((resolve, reject) => {
     setTimeout(() => {
-        const exito = true; // Simula una condición de éxito o fracaso
+        const exito = true; // Cambia esto para simular éxito o fallo
         if (exito) {
-            resolve('Operación exitosa');
+            resolve('Operación exitosa'); // La promesa se cumple
         } else {
-            reject('Operación fallida');
+            reject('Operación fallida'); // La promesa se rechaza
         }
     }, 2000);
 });
@@ -95,16 +108,20 @@ miPromesa
     });
 ```
 
+En este ejemplo:
+- Creamos una promesa que se resolverá después de 2 segundos.
+- Usamos `.then()` para manejar el caso de éxito y `.catch()` para manejar el caso de error.
+
 ### Encadenamiento de Promesas
 
-Las promesas permiten el encadenamiento, lo que facilita manejar múltiples tareas asincrónicas de manera secuencial.
+Puedes encadenar varias promesas para realizar varias tareas en orden.
 
 **Ejemplo de Encadenamiento:**
 ```javascript
 miPromesa
     .then((mensaje) => {
         console.log(mensaje); // 'Operación exitosa'
-        return 'Siguiente operación';
+        return 'Siguiente operación'; // Devuelve un nuevo valor
     })
     .then((mensaje) => {
         console.log(mensaje); // 'Siguiente operación'
@@ -114,11 +131,40 @@ miPromesa
     });
 ```
 
+Aquí, después de que la primera promesa se cumple, puedes realizar una segunda operación con el resultado.
+
+### Manejo de Múltiples Promesas
+
+Si necesitas esperar a que varias promesas se resuelvan, puedes usar `Promise.all`.
+
+**Ejemplo de `Promise.all`:**
+```javascript
+async function cargarDatos() {
+    const promesa1 = new Promise((resolve) => {
+        setTimeout(() => resolve('Datos 1'), 2000);
+    });
+    const promesa2 = new Promise((resolve) => {
+        setTimeout(() => resolve('Datos 2'), 3000);
+    });
+
+    try {
+        const resultados = await Promise.all([promesa1, promesa2]);
+        console.log(resultados); // ['Datos 1', 'Datos 2']
+    } catch (error) {
+        console.error('Error al cargar datos', error);
+    }
+}
+
+cargarDatos();
+```
+
+En este caso, `Promise.all` espera que ambas promesas se completen antes de continuar.
+
 ## Async/Await
 
 ### ¿Qué es Async/Await?
 
-`async/await` es una sintaxis más moderna y legible para trabajar con promesas. `async` se utiliza para declarar una función asíncrona, y `await` se utiliza dentro de funciones asíncronas para esperar una promesa.
+`async/await` es una forma moderna de trabajar con promesas que hace que el código sea más fácil de leer y escribir. `async` convierte una función en asíncrona, y dentro de esta función puedes usar `await` para esperar a que una promesa se resuelva.
 
 ### Funciones Asíncronas
 
@@ -126,21 +172,29 @@ miPromesa
 ```javascript
 async function miFuncionAsincrona() {
     try {
-        const mensaje = await miPromesa;
+        const mensaje = await new Promise((resolve) => {
+            setTimeout(() => resolve('Operación exitosa'), 2000);
+        });
         console.log(mensaje); // 'Operación exitosa'
     } catch (error) {
-        console.error(error); // 'Operación fallida'
+        console.error(error); // Manejo de errores
     }
 }
 
 miFuncionAsincrona();
 ```
 
+En este código:
+- `async` convierte `miFuncionAsincrona` en una función asíncrona.
+- `await` espera a que la promesa se resuelva antes de continuar.
+
 ### Ventajas de Async/Await
 
-`async/await` hace que el código asincrónico se parezca más al código sincrónico, lo que lo hace más fácil de entender y mantener.
+`async/await` hace que el código asincrónico se vea más como código normal y secuencial, lo que facilita su comprensión y mantenimiento.
 
-### Ejemplo Práctico Completo
+### Ejemplo Práctico: Llamada a la API de Pokémon
+
+Vamos a ver cómo usar `async/await` para obtener información de la API de Pokémon y mostrarla en una página web.
 
 **HTML:**
 ```html
@@ -149,10 +203,10 @@ miFuncionAsincrona();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Async/Await en JavaScript</title>
+    <title>Async/Await y API de Pokémon</title>
 </head>
 <body>
-    <button id="miBoton">Cargar datos</button>
+    <button id="cargarPokemon">Cargar Pokémon</button>
     <div id="resultado"></div>
     <script src="app.js"></script>
 </body>
@@ -161,33 +215,46 @@ miFuncionAsincrona();
 
 **JavaScript (app.js):**
 ```javascript
-const boton = document.getElementById('miBoton');
+const boton = document.getElementById('cargarPokemon');
 const resultado = document.getElementById('resultado');
+
+async function obtenerPokemon(pokemon) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+    try {
+        const respuesta = await fetch(url); // Hace la solicitud a la API
+        if (!respuesta.ok) {
+            throw new Error('No se pudo obtener el Pokémon');
+        }
+        const datos = await respuesta.json(); // Convierte la respuesta en JSON
+        return datos;
+    } catch (error) {
+        console.error(error);
+        throw error; // Lanza el error para manejarlo más tarde
+    }
+}
 
 boton.addEventListener('click', async function() {
     try {
-        const datos = await cargarDatos();
-        resultado.innerText = datos;
+        const datos = await obtenerPokemon('pikachu'); // Cambia 'pikachu' por el nombre del Pokémon que desees
+        resultado.innerHTML = `
+            <h2>${datos.name.charAt(0).toUpperCase() + datos.name.slice(1)}</h2>
+            <img src="${datos.sprites.front_default}" alt="${datos.name}" />
+            <p>Altura: ${datos.height / 10} m</p>
+            <p>Peso: ${datos.weight / 10} kg</p>
+        `;
     } catch (error) {
-        resultado.innerText = 'Error al cargar datos';
-        console.error(error);
+        resultado.innerText = 'Error al cargar datos del Pokémon';
     }
 });
-
-function cargarDatos() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const exito = true; // Simula una condición de éxito o fracaso
-            if (exito) {
-                resolve('Datos cargados correctamente');
-            } else {
-                reject('Error al cargar datos');
-            }
-        }, 2000);
-    });
-}
 ```
+
+En este ejemplo:
+- Cuando haces clic en el botón, se llama a la función `obtenerPokemon` para solicitar datos de un Pokémon desde la API.
+- `await` espera a que la respuesta de la API se reciba y
+
+ se convierta en JSON.
+- Los datos del Pokémon se muestran en la página.
 
 ## Conclusión
 
-La asincronía es una parte esencial de JavaScript que permite crear aplicaciones web rápidas y eficientes. Desde los callbacks básicos hasta las promesas y la sintaxis moderna de `async/await`, cada método ofrece diferentes formas de manejar la asincronía. Entender y utilizar estas técnicas te permitirá escribir código más claro, manejable y eficiente.
+La asincronía es clave para crear aplicaciones web rápidas y eficientes. Con callbacks, promesas y `async/await`, JavaScript ofrece diferentes formas de manejar tareas que toman tiempo, como solicitar datos de un servidor. `async/await` es especialmente útil para escribir código que se lee de manera clara y secuencial, facilitando la gestión de operaciones asincrónicas.
