@@ -307,9 +307,7 @@ export async function loadJSON(fileName) {
 import { loadJSON } from './data-loader.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const data =
-
- await loadJSON('./data.json');
+    const data = await loadJSON('./data.json');
     console.log(data);
 });
 ```
@@ -327,7 +325,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset
+
+="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uso de import.meta.url</title>
 </head>

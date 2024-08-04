@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
-
 ---
+
 # APIs Web y Fetch
 
 ## Introducción
@@ -224,60 +224,30 @@ if (typeof data.edad !== 'number') {
 }
 ```
 
-## Técnicas Avanzadas con Fetch
+### Manejo de Excepciones con `try...catch`
 
-### Abortando Peticiones
+El uso de `try...catch` en combinación con `async/await` permite una sintaxis más limpia y legible para manejar errores. Esta técnica es particularmente útil cuando se realizan varias peticiones encadenadas o cuando se manejan múltiples operaciones asíncronas.
 
-A veces es necesario abortar una petición si el usuario navega fuera de la página o si se requiere cancelar una operación larga. Esto se puede hacer utilizando `AbortController`.
-
-**Ejemplo de AbortController:**
+**Ejemplo de Manejo de Excepciones con `try...catch`:**
 ```javascript
-const controller = new AbortController();
-const signal = controller.signal;
-
-fetch('https://api.example.com/data', { signal })
-    .then(response => {
+async function fetchData() {
+    try {
+        const response = await fetch('https://api.example.com/data');
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return response.json();
-    })
-    .then(data => {
+        const data = await response.json();
         console.log(data);
-    })
-    .catch(error => {
-        if (error.name === 'AbortError') {
-            console.log('Petición abortada');
-        } else {
-            console.error('Error:', error);
-        }
-    });
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
+}
 
-// Abortando la petición
-controller.abort();
+fetchData();
 ```
 
-### Concurrente y Paralelo de Peticiones
-
-Puedes realizar varias peticiones en paralelo utilizando `Promise.all()` para obtener los resultados de manera concurrente.
-
-**Ejemplo de Peticiones Concurrentes:**
-```javascript
-const fetchUserData = fetch('https://api.example.com/user');
-const fetchPosts = fetch('https://api.example.com/posts');
-
-Promise.all([fetchUserData, fetchPosts])
-    .then(responses => Promise.all(responses.map(response => response.json())))
-    .then(data => {
-        const [userData, posts] = data;
-        console.log('User Data:', userData);
-        console.log('Posts:', posts);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-```
+## Técnicas Avanzadas con Fetch
 
 ## Conclusión
 
-La Fetch API es una herramienta poderosa y flexible para realizar peticiones HTTP en JavaScript. Entender cómo manejar datos JSON y técnicas avanzadas como el manejo de errores y la utilización de `AbortController` te permitirá optimizar el rendimiento y la estabilidad de tus aplicaciones. Con este conocimiento, estarás mejor preparado para interactuar con APIs y manejar datos de manera eficiente en tus proyectos, asegurando tanto la funcionalidad como la seguridad de tus aplicaciones web.
+La Fetch API es una herramienta poderosa y flexible para realizar peticiones HTTP en JavaScript. Entender cómo manejar datos JSON  te permitirá optimizar el rendimiento y la estabilidad de tus aplicaciones. Con este conocimiento, estarás mejor preparado para interactuar con APIs y manejar datos de manera eficiente en tus proyectos, asegurando tanto la funcional
