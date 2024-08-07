@@ -1,7 +1,6 @@
 ---
 sidebar_position: 5
 ---
-
 # Objetos y Arrays
 
 ## Introducción
@@ -100,6 +99,38 @@ for (let propiedad in persona) {
 // nombre: Juan
 // edad: 30
 // profesion: Desarrollador
+```
+
+### Desestructuración de Objetos
+
+La desestructuración permite extraer valores de objetos y asignarlos a variables de una manera más concisa.
+
+**Ejemplo:**
+
+```javascript
+let persona = {
+    nombre: "Carlos",
+    edad: 28,
+    profesion: "Ingeniero"
+};
+
+let { nombre, edad, profesion } = persona;
+console.log(nombre); // Salida: "Carlos"
+console.log(edad); // Salida: 28
+console.log(profesion); // Salida: "Ingeniero"
+```
+
+### Propagación en Objetos
+
+La propagación permite copiar las propiedades de un objeto a otro de manera sencilla.
+
+**Ejemplo:**
+
+```javascript
+let objetoOriginal = { a: 1, b: 2 };
+let objetoCopiado = { ...objetoOriginal, c: 3 };
+
+console.log(objetoCopiado); // Salida: { a: 1, b: 2, c: 3 }
 ```
 
 ## Arrays y sus Métodos más Comunes
@@ -244,131 +275,30 @@ let algunasFrutas = frutas.slice(1, 3);
 console.log(algunasFrutas); // Salida: ["kiwi", "cereza"]
 ```
 
-### Métodos de Iteración y Transformación de Arrays
+### Desestructuración de Arrays
 
-#### Método `forEach`
-
-El método `forEach` ejecuta una función proporcionada una vez por cada elemento del array.
+La desestructuración permite extraer valores de arrays y asignarlos a variables de una manera más concisa.
 
 **Ejemplo:**
 
 ```javascript
 let frutas = ["manzana", "banana", "cereza"];
 
-frutas.forEach(function(fruta) {
-    console.log(fruta);
-});
-
-// Salida:
-// "manzana"
-// "banana"
-// "cereza"
+let [primera, segunda, tercera] = frutas;
+console.log(primera); // Salida: "manzana"
+console.log(segunda); // Salida: "banana"
+console.log(tercera); // Salida: "cereza"
 ```
 
-#### Método `map`
+### Propagación en Arrays
 
-El método `map` crea un nuevo array con los resultados de llamar a una función proporcionada en cada elemento del array.
+La propagación permite copiar los elementos de un array a otro de manera sencilla.
 
 **Ejemplo:**
 
 ```javascript
-let frutas = ["manzana", "banana", "cereza"];
+let frutasOriginales = ["manzana", "banana"];
+let frutasNuevas = [...frutasOriginales, "cereza", "uva"];
 
-let frutasMayusculas = frutas.map(function(fruta) {
-    return fruta.toUpperCase();
-});
-console.log(frutasMayusculas); // Salida: ["MANZANA", "BANANA", "CEREZA"]
-```
-
-#### Método `filter`
-
-El método `filter` crea un nuevo array con todos los elementos que pasan una prueba implementada por una función proporcionada.
-
-**Ejemplo:**
-
-```javascript
-let frutas = ["manzana", "banana", "cereza"];
-
-let frutasConA = frutas.filter(function(fruta) {
-    return fruta.includes("a");
-});
-console.log(frutasConA); // Salida: ["manzana", "banana"]
-```
-
-#### Método `reduce`
-
-El método `reduce` aplica una función a un acumulador y a cada valor del array (de izquierda a derecha) para reducirlo a un solo valor.
-
-**Ejemplo:**
-
-```javascript
-let numeros = [1, 2, 3, 4];
-
-let suma = numeros.reduce(function(acumulador, valorActual) {
-    return acumulador + valorActual;
-}, 0);
-console.log(suma); // Salida: 10
-```
-
-#### Método `find`
-
-El método `find` devuelve el primer elemento del array que
-
- satisface la función de prueba proporcionada.
-
-**Ejemplo:**
-
-```javascript
-let frutas = ["manzana", "banana", "cereza"];
-
-let frutaEncontrada = frutas.find(function(fruta) {
-    return fruta === "banana";
-});
-console.log(frutaEncontrada); // Salida: "banana"
-```
-
-#### Método `findIndex`
-
-El método `findIndex` devuelve el índice del primer elemento del array que satisface la función de prueba proporcionada. De lo contrario, devuelve -1.
-
-**Ejemplo:**
-
-```javascript
-let frutas = ["manzana", "banana", "cereza"];
-
-let indiceFruta = frutas.findIndex(function(fruta) {
-    return fruta === "cereza";
-});
-console.log(indiceFruta); // Salida: 2
-```
-
-#### Método `concat`
-
-El método `concat` combina dos o más arrays y devuelve un nuevo array.
-
-**Ejemplo:**
-
-```javascript
-let frutas = ["manzana", "banana"];
-let masFrutas = ["cereza", "uva"];
-
-let todasLasFrutas = frutas.concat(masFrutas);
-console.log(todasLasFrutas); // Salida: ["manzana", "banana", "cereza", "uva"]
-```
-
-#### Método `slice`
-
-El método `slice` devuelve una copia superficial de una porción de un array dentro de un nuevo array.
-
-**Ejemplo:**
-
-```javascript
-let frutas = ["manzana", "banana", "cereza"];
-
-let algunasFrutas = frutas.slice(1, 3);
-console.log(algunasFrutas); // Salida: ["banana", "cereza"]
-```
-
-## Conclusión
-
-Los objetos y arrays son componentes esenciales en la programación con JavaScript. Los objetos permiten agrupar datos y comportamientos relacionados, mientras que los arrays facilitan el almacenamiento y la manipulación de listas de elementos. Al dominar la creación y manipulación de objetos y arrays, así como los métodos comunes de arrays, puedes escribir código más robusto y eficiente en JavaScript. Con la práctica, estas estructuras de datos se convertirán en herramientas fundamentales en tu desarrollo como programador.
+console.log(frutasNuevas); // Salida: ["manzana", "banana", "cereza", "uva"]
+``
