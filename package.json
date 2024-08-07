@@ -1,6 +1,6 @@
 {
-  "name": "api-laravel-doc",
-  "version": "0.0.0",
+  "name": "js_curso",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

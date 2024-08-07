@@ -19,6 +19,47 @@ En este libro, aprenderás desde los conceptos básicos hasta las técnicas más
 
 4. **Herramientas y Buenas Prácticas**: Finalmente, aprenderás a configurar un entorno de desarrollo moderno, utilizar frameworks y librerías populares, y aplicar buenas prácticas y patrones de diseño para mantener y escalar tu código.
 
+### Estructura general
+
+#### Introducción
+
+#### Preparación del entorno
+
+- Primeros Pasos con JavaScript
+- Code Runner en Visual Studio
+
+#### Parte 1: Fundamentos de JavaScript
+
+- Sintaxis Básica
+- Operadores
+- Objetos y arrays
+- Estructuras de Control
+- Funciones
+- Uso de Map y Set en JavaScript
+
+#### Parte 2: JavaScript Intermedio
+
+- Programación Orientada a Objetos
+- Manipulación del DOM
+- Control de Excepciones de Errores
+- Depurar en Visual Studio Code
+- Asincronía en JavaScript
+
+#### Parte 3: JavaScript Avanzado
+
+- Módulos en JavaScript
+- APIs Web y Fetch
+- Cookies, LocalStorage y SessionStorage
+
+#### Parte 4: Herramientas y Buenas Prácticas
+
+- Configuración de un Entorno de Desarrollo Moderno
+- Frameworks y Librerías Modernas
+- Desarrollo con Node.js y MongoDB
+- Buenas Prácticas y Patrones de Diseño
+
+#### Conclusión
+
 ## Material de apoyo
 
 ### Cuestionarios
@@ -38,8 +79,6 @@ Cada sección contiene ejercicios prácticos que te permitirán:
 
 Estos ejemplos están diseñados para ser accesibles y comprensibles, independientemente de tu nivel de experiencia. A medida que avances, encontrarás ejercicios que aumentan en complejidad, ayudándote a desarrollar una comprensión profunda y práctica de JavaScript.
 
-Aquí tienes el texto actualizado sin la referencia a la suscripción:
-
 ## Para saber más
 
 Visita el [blog del autor](https://blog-astro-nu.vercel.app/), donde encontrarás una gran cantidad de recursos, como guías detalladas, libros escritos por el autor, y artículos técnicos sobre programación, trucos y consejos. Este blog es una excelente fuente para profundizar en tus conocimientos y mantenerte actualizado con las últimas tendencias y avances en el mundo del desarrollo web y la programación.
@@ -51,3 +90,4 @@ Algunas secciones destacadas del blog incluyen:
 - **Artículos Técnicos**: Análisis y explicaciones sobre programación, incluyendo trucos y consejos para mejorar tu eficiencia y habilidades.
 
 Explora el blog y únete a la comunidad de desarrolladores apasionados por el aprendizaje continuo y la innovación.
+```
