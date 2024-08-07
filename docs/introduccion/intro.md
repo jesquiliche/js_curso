@@ -32,5 +32,3 @@ JavaScript ha evolucionado significativamente desde su creación en 1995 por Bre
 
 ## Conclusión
 La importancia de JavaScript en el desarrollo web moderno no puede subestimarse. Desde la creación de experiencias de usuario dinámicas hasta el desarrollo full-stack, JavaScript es un pilar fundamental en el ecosistema de desarrollo web. Su versatilidad, el apoyo de una comunidad robusta, y su constante evolución aseguran que seguirá siendo un lenguaje clave en el futuro del desarrollo de software.
-
-
